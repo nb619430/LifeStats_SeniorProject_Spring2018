@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard_page"
+            android:icon="@drawable/ic_menu_send"
+            android:title="My Dashboard" />
+        <item
+            android:id="@+id/profile_info"
+            android:icon="@drawable/ic_menu_send"
+            android:title="View Profile Information" />
+        <item
+            android:id="@+id/profile_edit"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Edit Profile Information" />
+        <item
+            android:id="@+id/user_settings"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Settings" />
+    </group>
+
+</menu>
