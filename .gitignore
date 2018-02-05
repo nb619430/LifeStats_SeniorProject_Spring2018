@@ -1,11 +1,3 @@
 #included to be able to pull/push to the repo without problem
 
-*.iml
-.gradle
 /local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-.externalNativeBuild
