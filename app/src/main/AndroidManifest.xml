@@ -24,10 +24,39 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.nick.lifestats.LoginPage" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".view_profile"
+            android:label="Your Profile"
+            android:parentActivityName=".Dashboard"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.nick.lifestats.Dashboard" />
+        </activity>
+        <activity
+            android:name=".edit_profile"
+            android:label="@string/title_activity_edit_profile"
+            android:parentActivityName=".Dashboard"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.nick.lifestats.Dashboard" />
+        </activity>
+        <activity
+            android:name=".user_settings"
+            android:label="@string/title_activity_user_settings"
+            android:parentActivityName=".Dashboard"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.nick.lifestats.Dashboard" />
         </activity>
     </application>
 

@@ -21,4 +21,7 @@
         completions."
     </string>
     <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_activity_view_profile">view_profile</string>
+    <string name="title_activity_edit_profile">edit_profile</string>
+    <string name="title_activity_user_settings">user_settings</string>
 </resources>
