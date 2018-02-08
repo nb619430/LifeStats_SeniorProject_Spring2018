@@ -83,7 +83,7 @@ public class Dashboard extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        //hey
         if (id == R.id.profile_info) {
             startActivity(new Intent(Dashboard.this, view_profile.class));
         } else if (id == R.id.profile_edit) {
