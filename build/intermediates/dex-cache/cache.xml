@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_3669a48fb7ab5622403b3f5f7463c95679087949\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_c8d1c16291b0660e0fbce366475117d784e42b54\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_1bd0eb07d1ec0ef5b01afdb5ea74ce91ecea5be4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_67de1ee8464b7ed83a86f96b7d459d92e0e7a0df\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_9024f8f7f366c5e1dc507274305a73dd16864bc6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_cc3d9b975caa4bec4dec5c1386a6d2329cf78210\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_de44a983147d1f51afb7e052ecad671f9781ce5e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_0a2f8ab886361677b3694c93b30d78baa691eb04\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2994dff9ad2cdff87729753a304f2e458248b105">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_78ab50eb63d5d071645edcd52805a2ae7682349d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_5dfc2818bb16fd3d32bbaeb7b7e248a675f89a6d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0fab64801ea2bd4057fb079475fc00281983cfcc">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8f95d442eee27fbcca47686b11da0ec6e5946c78\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_1e1d61ee15df53b88b115c910207d5120c6ec5ac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_47bd8ceef53cd675c73aab824b1e146190720713\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_05787de1813967e70a074c8183cc1aec16d3e0aa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_2d921ba1527217eb7efe601fc666e7b9677fc4f6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_9da8f1b83910a5ca5bba70f1ad3591be46d817e8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_fbaffe53c7599a30d30bcfbca9485496567aee4b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_8ffab6cebd86b7fb224a57b1d72bfdc0111edb5b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_ee4520bc4b66d8a959b268f0a8a53e79208af94c\classes.dex" />
+    </item>
+
+</items>
