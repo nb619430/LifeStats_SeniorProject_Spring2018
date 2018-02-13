@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class Dashboard extends AppCompatActivity
@@ -44,6 +45,23 @@ public class Dashboard extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Button input_btn = (Button) findViewById(R.id.submit_btn);
+        input_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, enter_stats.class));
+            }
+        });
+
+        Button viewdata_btn = (Button) findViewById(R.id.view_btn);
+        viewdata_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO create page for viewing stats and link it to the db
+                //startActivity(new Intent(Dashboard.this, view_stats.class));
+            }
+        });
     }
 
     @Override
@@ -83,7 +101,7 @@ public class Dashboard extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        //hey
+
         if (id == R.id.profile_info) {
             startActivity(new Intent(Dashboard.this, view_profile.class));
         } else if (id == R.id.profile_edit) {

@@ -58,6 +58,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.nick.lifestats.Dashboard" />
         </activity>
+        <activity
+            android:name=".enter_stats"
+            android:label="@string/title_activity_enter_stats"
+            android:parentActivityName=".Dashboard"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.nick.lifestats.Dashboard" />
+        </activity>
     </application>
 
 </manifest>

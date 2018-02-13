@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "126989997668",
+    "firebase_url": "https://lifestats-737b3.firebaseio.com",
+    "project_id": "lifestats-737b3",
+    "storage_bucket": "lifestats-737b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126989997668:android:bd04a0791e5eaa77",
+        "android_client_info": {
+          "package_name": "com.example.nick.lifestats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "126989997668-90lpmqiiihtisdhkaan58q77aphrq46c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nick.lifestats",
+            "certificate_hash": "62d9e04218a6c169b32a6cb314efdd24b306e43f"
+          }
+        },
+        {
+          "client_id": "126989997668-tsfoa51469lr8jqc7uaf7okf04kgtrlb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnzwCcJoGsh-qFnvlNiJvg4-F9EY_BOyY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "126989997668-tsfoa51469lr8jqc7uaf7okf04kgtrlb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

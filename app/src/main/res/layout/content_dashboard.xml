@@ -13,4 +13,29 @@
     tools:context="com.example.nick.lifestats.Dashboard"
     tools:showIn="@layout/app_bar_dashboard">
 
+    <Button
+        android:text="Submit Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginBottom="58dp"
+        android:id="@+id/submit_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="View Statistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:id="@+id/view_btn"
+        android:layout_alignBaseline="@+id/submit_btn"
+        android:layout_alignBottom="@+id/submit_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp" />
 </RelativeLayout>
