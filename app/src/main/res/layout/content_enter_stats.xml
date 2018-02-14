@@ -13,4 +13,36 @@
     tools:context="com.example.nick.lifestats.enter_stats"
     tools:showIn="@layout/app_bar_enter_stats">
 
+    <Button
+        android:text="Submit Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit_test"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Type Data Here"
+        android:ems="10"
+        android:id="@+id/data_et"
+        android:layout_above="@+id/submit_test"
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|italic"
+        android:textAllCaps="false"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:text="Enter Data:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/data_et"
+        android:layout_alignLeft="@+id/data_et"
+        android:layout_alignStart="@+id/data_et"
+        android:id="@+id/tv"
+        android:textStyle="normal|bold" />
+
 </RelativeLayout>

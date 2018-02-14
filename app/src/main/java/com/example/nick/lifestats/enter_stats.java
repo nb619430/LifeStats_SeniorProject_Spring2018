@@ -1,5 +1,6 @@
 package com.example.nick.lifestats;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,9 +14,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class enter_stats extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    // Test Message to DB
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference lifestats_db = database.getReference("Data");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +53,36 @@ public class enter_stats extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
+        //---------------------------------------------------------------------------------
+        //                         TESTS CONNECTION TO DB
+        //-------------------------------------------------------------------------------
+        final EditText input = (EditText) findViewById(R.id.data_et);
+        Button submit = (Button) findViewById(R.id.submit_test);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id = lifestats_db.push().getKey(); //Generates node id
+                String data = input.getText().toString();
+                lifestats_db.child(id).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Context context = getApplicationContext();
+                        CharSequence text = "Data Successfully Entered!";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+                    }
+                });
+            }
+        });
+        //=====================================================================================
+
+
+
     }
 
     @Override
