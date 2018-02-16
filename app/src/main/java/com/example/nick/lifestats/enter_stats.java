@@ -14,8 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,7 +31,7 @@ public class enter_stats extends AppCompatActivity
 
     // Test Message to DB
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference lifestats_db = database.getReference("Data");
+    DatabaseReference lifestats_db = database.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +58,45 @@ public class enter_stats extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Creates the Spinner and castes the arrays for the different data types into spinner dropdown items
+        //---------------------------------------------------------------------------
+        final Spinner data_types = (Spinner) findViewById(R.id.data_type_dropdown);
 
+        final ArrayAdapter<CharSequence> adapter_financial = ArrayAdapter.createFromResource(this, R.array.data_type_array_money, android.R.layout.simple_spinner_item);
+            adapter_financial.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        final ArrayAdapter<CharSequence> adapter_time = ArrayAdapter.createFromResource(this, R.array.data_type_array_time, android.R.layout.simple_spinner_item);
+            adapter_time.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        final ArrayAdapter<CharSequence> adapter_default = ArrayAdapter.createFromResource(this, R.array.data_type_array_default, android.R.layout.simple_spinner_item);
+        adapter_time.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //data_types.setAdapter(adapter_financial);
+        //----------------------------------------------------------------------------
+
+        //group for radio buttons - Only one can be clicked
+        RadioGroup radio_buttons = (RadioGroup)findViewById(R.id.radio_group);
+        radio_buttons.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.financial_radio) {
+                    data_types.setAdapter(adapter_financial);
+                    //Toast.makeText(getApplicationContext(), "choice: financial", Toast.LENGTH_SHORT).show();
+
+                }
+                else if(checkedId == R.id.time_radio) {
+                    data_types.setAdapter(adapter_time);
+                    //Toast.makeText(getApplicationContext(), "choice: time", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    data_types.setAdapter(adapter_default);
+                }
+            }
+        });
 
         //---------------------------------------------------------------------------------
         //                         TESTS CONNECTION TO DB
-        //-------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------
         final EditText input = (EditText) findViewById(R.id.data_et);
         Button submit = (Button) findViewById(R.id.submit_test);
         submit.setOnClickListener(new View.OnClickListener() {
@@ -79,9 +117,7 @@ public class enter_stats extends AppCompatActivity
                 });
             }
         });
-        //=====================================================================================
-
-
+        //==================================================================================
 
     }
 

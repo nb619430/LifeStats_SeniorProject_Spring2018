@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="data_type_array_money">
+        <item>Food</item>
+        <item>Clothing</item>
+        <item>Entertainment/Hobbies</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="data_type_array_time">
+        <item>Academic</item>
+        <item>Hobbies/Leisure</item>
+        <item>Physical Fitness</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="data_type_array_default">
+        <item>(Please Select Type Of Data Above)</item>
+    </string-array>
+</resources>
