@@ -31,7 +31,7 @@ public class enter_stats extends AppCompatActivity
 
     // Test Message to DB
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference lifestats_db = database.getReference();
+    DatabaseReference lifestats_db = database.getReference("user");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +71,7 @@ public class enter_stats extends AppCompatActivity
         final ArrayAdapter<CharSequence> adapter_default = ArrayAdapter.createFromResource(this, R.array.data_type_array_default, android.R.layout.simple_spinner_item);
         adapter_time.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        //data_types.setAdapter(adapter_financial);
-        //----------------------------------------------------------------------------
+        final EditText input = (EditText) findViewById(R.id.data_et);//field where values will be entered from
 
         //group for radio buttons - Only one can be clicked
         RadioGroup radio_buttons = (RadioGroup)findViewById(R.id.radio_group);
@@ -80,10 +79,30 @@ public class enter_stats extends AppCompatActivity
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(checkedId == R.id.financial_radio) {
-                    data_types.setAdapter(adapter_financial);
-                    //Toast.makeText(getApplicationContext(), "choice: financial", Toast.LENGTH_SHORT).show();
 
+                    data_types.setAdapter(adapter_financial);
+                    final String type = data_types.getSelectedItem().toString();
+
+                    Button submit = (Button) findViewById(R.id.submit_test);
+                    submit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String data = input.getText().toString();
+                            //String id = lifestats_db.push().getKey(); //Generates node id
+                            String id = lifestats_db.child("Data").child("Financial").child(type).push().getKey();
+                            lifestats_db.child("Data").child("Financial").child(type).child(id).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast toast = Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
+
+                            });
+                        }
+                    });
                 }
+
+
                 else if(checkedId == R.id.time_radio) {
                     data_types.setAdapter(adapter_time);
                     //Toast.makeText(getApplicationContext(), "choice: time", Toast.LENGTH_SHORT).show();
@@ -97,14 +116,14 @@ public class enter_stats extends AppCompatActivity
         //---------------------------------------------------------------------------------
         //                         TESTS CONNECTION TO DB
         //---------------------------------------------------------------------------------
-        final EditText input = (EditText) findViewById(R.id.data_et);
+        /*final EditText input = (EditText) findViewById(R.id.data_et);
         Button submit = (Button) findViewById(R.id.submit_test);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String id = lifestats_db.push().getKey(); //Generates node id
                 String data = input.getText().toString();
-                lifestats_db.child(id).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+               /* lifestats_db.child("level1").child("level2").setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Context context = getApplicationContext();
@@ -115,8 +134,22 @@ public class enter_stats extends AppCompatActivity
                         toast.show();
                     }
                 });
+
+                lifestats_db.child("Profile").setValue("profile test");
+
+                //financial database inputs
+                lifestats_db.child("Data").child("Financial").child("food").setValue("food test");
+                lifestats_db.child("Data").child("Financial").child("clothing").setValue("clothing test");
+                lifestats_db.child("Data").child("Financial").child("entertainment").setValue("entertainment test");
+                lifestats_db.child("Data").child("Financial").child("other").setValue("other test");
+
+                //time database inputs
+                lifestats_db.child("Data").child("Time").child("academic").setValue("academic test");
+                lifestats_db.child("Data").child("Time").child("hobbies&leisure").setValue("hobbies/leisure test");
+                lifestats_db.child("Data").child("Time").child("physical fitness").setValue("physical fitness test");
+
             }
-        });
+        });*/
         //==================================================================================
 
     }

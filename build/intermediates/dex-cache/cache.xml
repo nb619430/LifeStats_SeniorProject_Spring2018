@@ -178,7 +178,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="04a7a4a6552226e67102ed65deb76e57dcce66d0">
+        sha1="eb95b7ef380388cb90005430eed255ebb258e445">
         <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats_SeniorProject_Spring2018\LifeStats3\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b2ebd8aaa0c9e00e7c7da8ddc397362202063b2b\classes.dex" />
     </item>
     <item
@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="29441faa2ad752964be2d1d100da4e09eb56f76f">
+        sha1="ae8be8f1251d1411a41ac0481f23500f30da17b0">
         <dex dex="C:\Users\black_000\Desktop\LifeStats\LifeStats_SeniorProject_Spring2018\LifeStats3\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3f42985a89e70d6ec9cf3d70b4f1f23c086bf941\classes.dex" />
     </item>
     <item
