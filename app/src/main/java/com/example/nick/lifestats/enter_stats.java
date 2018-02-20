@@ -126,7 +126,7 @@ public class enter_stats extends AppCompatActivity
             }
         });
 
-        
+
     }
 
     @Override

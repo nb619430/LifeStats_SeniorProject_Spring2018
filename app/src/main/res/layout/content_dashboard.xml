@@ -14,17 +14,17 @@
     tools:showIn="@layout/app_bar_dashboard">
 
     <Button
-        android:text="Submit Data"
+        android:id="@+id/submit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginLeft="38dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginBottom="58dp"
-        android:id="@+id/submit_btn"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/textView2"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginTop="76dp"
+        android:layout_toLeftOf="@+id/view_btn"
+        android:layout_toStartOf="@+id/view_btn"
+        android:text="Submit Data"
+        android:textStyle="bold" />
 
     <Button
         android:text="View Statistics"
@@ -38,4 +38,19 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="17dp"
         android:layout_marginEnd="17dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="114dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="LifeStats: Your Life In Numbers"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
 </RelativeLayout>
