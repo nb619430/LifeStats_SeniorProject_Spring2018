@@ -25,4 +25,5 @@
     <string name="title_activity_edit_profile">edit_profile</string>
     <string name="title_activity_user_settings">user_settings</string>
     <string name="title_activity_enter_stats">enter_stats</string>
+    <string name="title_activity_view_stats">view_stats</string>
 </resources>

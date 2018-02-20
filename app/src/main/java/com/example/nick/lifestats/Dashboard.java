@@ -58,8 +58,7 @@ public class Dashboard extends AppCompatActivity
         viewdata_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO create page for viewing stats and link it to the db
-                //startActivity(new Intent(Dashboard.this, view_stats.class));
+                startActivity(new Intent(Dashboard.this, view_stats.class));
             }
         });
     }

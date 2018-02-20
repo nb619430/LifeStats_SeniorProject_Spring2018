@@ -40,19 +40,19 @@
         android:layout_marginBottom="70dp" />
 
     <EditText
+        android:id="@+id/data_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Type Data Here"
-        android:ems="10"
-        android:id="@+id/data_et"
-        android:textStyle="normal|italic"
-        android:textAllCaps="false"
-        android:textAlignment="viewStart"
-        android:layout_marginBottom="89dp"
         android:layout_above="@+id/submit_test"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="89dp"
+        android:ems="10"
+        android:hint="Type Data Here"
+        android:inputType="textPersonName"
+        android:textAlignment="viewStart"
+        android:textAllCaps="false"
+        android:textStyle="normal|italic" />
 
     <RadioGroup
         android:id="@+id/radio_group"
