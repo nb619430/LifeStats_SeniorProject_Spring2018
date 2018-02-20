@@ -148,18 +148,6 @@ public class enter_stats extends AppCompatActivity
                     }
                 });
 
-                lifestats_db.child("Profile").setValue("profile test");
-
-                //financial database inputs
-                lifestats_db.child("Data").child("Financial").child("food").setValue("food test");
-                lifestats_db.child("Data").child("Financial").child("clothing").setValue("clothing test");
-                lifestats_db.child("Data").child("Financial").child("entertainment").setValue("entertainment test");
-                lifestats_db.child("Data").child("Financial").child("other").setValue("other test");
-
-                //time database inputs
-                lifestats_db.child("Data").child("Time").child("academic").setValue("academic test");
-                lifestats_db.child("Data").child("Time").child("hobbies&leisure").setValue("hobbies/leisure test");
-                lifestats_db.child("Data").child("Time").child("physical fitness").setValue("physical fitness test");
 
             }
         });*/
