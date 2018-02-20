@@ -20,11 +20,20 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class view_stats extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -80,27 +89,27 @@ public class view_stats extends AppCompatActivity
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(checkedId == R.id.financial_radio) {
 
-                    data_types.setAdapter(adapter_time);
-
+                    data_types.setAdapter(adapter_financial);
                     Button view = (Button) findViewById(R.id.view_test);
                     view.setOnClickListener(new View.OnClickListener() {
+
+                        DatabaseReference ref = lifestats_db.child("Data").child("Financial");
                         @Override
                         public void onClick(View v) {
-                            /*
-                            String type = data_types.getSelectedItem().toString();
-                            String data = input.getText().toString();
-                            String id = lifestats_db.child("Data").child("Time").child(type).push().getKey();
-                            lifestats_db.child("Data").child("Time").child(type).child(id).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            ref.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast toast = Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT);
-                                    toast.show()
-
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    String type = data_types.getSelectedItem().toString();
+                                    String data = dataSnapshot.child(type).getValue().toString();
+                                    TextView output = (TextView)findViewById(R.id.output_tv);
+                                    output.setText(OutputTrim(data));
                                 }
 
-                            });*/
-                            Toast toast = Toast.makeText(getApplicationContext(), "Not working....", Toast.LENGTH_SHORT);
-                            toast.show();
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
                         }
                     });
                 }
@@ -108,33 +117,58 @@ public class view_stats extends AppCompatActivity
                 else if(checkedId == R.id.time_radio) {
 
                     data_types.setAdapter(adapter_time);
-
                     Button view = (Button) findViewById(R.id.view_test);
                     view.setOnClickListener(new View.OnClickListener() {
+
+                        DatabaseReference ref = lifestats_db.child("Data").child("Time");
                         @Override
                         public void onClick(View v) {
-                            /*
-                            String type = data_types.getSelectedItem().toString();
-                            String data = input.getText().toString();
-                            String id = lifestats_db.child("Data").child("Time").child(type).push().getKey();
-                            lifestats_db.child("Data").child("Time").child(type).child(id).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            ref.addValueEventListener(new ValueEventListener() {
                                 @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast toast = Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT);
-                                    toast.show()
-
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    String type = data_types.getSelectedItem().toString();
+                                    String data = dataSnapshot.child(type).getValue().toString();
+                                    TextView output = (TextView)findViewById(R.id.output_tv);
+                                    output.setText(OutputTrim(data));
                                 }
 
-                            });*/
-                            Toast toast = Toast.makeText(getApplicationContext(), "Not working....", Toast.LENGTH_SHORT);
-                            toast.show();
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
                         }
                     });
                 }
             }
         });
+    }
 
-
+    private String OutputTrim(String output){
+        List<String>values = new ArrayList<String>();
+        //values.add(output);
+        for(int i = 0; i < output.length(); i++){
+            int start = 0;
+            int end = 0;
+                if(output.charAt(i) == '=') {
+                    start = i;
+                    for (int j = i; j < output.length(); j++) {
+                        if (output.charAt(j) == ',' || output.charAt(j) == '}') {
+                            end = j;
+                            String temp = output.substring(start+1, end);
+                            values.add(temp);
+                            break;
+                        }
+                    }
+                }
+        }
+        StringBuilder sb = new StringBuilder();
+        for (String s : values)
+        {
+            sb.append(s);
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 
     @Override
