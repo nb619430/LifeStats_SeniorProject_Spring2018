@@ -126,33 +126,7 @@ public class enter_stats extends AppCompatActivity
             }
         });
 
-        //---------------------------------------------------------------------------------
-        //                         TESTS CONNECTION TO DB
-        //---------------------------------------------------------------------------------
-        /*final EditText input = (EditText) findViewById(R.id.data_et);
-        Button submit = (Button) findViewById(R.id.submit_test);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String id = lifestats_db.push().getKey(); //Generates node id
-                String data = input.getText().toString();
-               /* lifestats_db.child("level1").child("level2").setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Context context = getApplicationContext();
-                        CharSequence text = "Data Successfully Entered!";
-                        int duration = Toast.LENGTH_SHORT;
-
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.show();
-                    }
-                });
-
-
-            }
-        });*/
-        //==================================================================================
-
+        
     }
 
     @Override
