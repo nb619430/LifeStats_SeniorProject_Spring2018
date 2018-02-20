@@ -81,14 +81,13 @@ public class enter_stats extends AppCompatActivity
                 if(checkedId == R.id.financial_radio) {
 
                     data_types.setAdapter(adapter_financial);
-                    final String type = data_types.getSelectedItem().toString();
 
                     Button submit = (Button) findViewById(R.id.submit_test);
                     submit.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            String type = data_types.getSelectedItem().toString();
                             String data = input.getText().toString();
-                            //String id = lifestats_db.push().getKey(); //Generates node id
                             String id = lifestats_db.child("Data").child("Financial").child(type).push().getKey();
                             lifestats_db.child("Data").child("Financial").child(type).child(id).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -102,13 +101,27 @@ public class enter_stats extends AppCompatActivity
                     });
                 }
 
-
                 else if(checkedId == R.id.time_radio) {
+
                     data_types.setAdapter(adapter_time);
-                    //Toast.makeText(getApplicationContext(), "choice: time", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    data_types.setAdapter(adapter_default);
+
+                    Button submit = (Button) findViewById(R.id.submit_test);
+                    submit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String type = data_types.getSelectedItem().toString();
+                            String data = input.getText().toString();
+                            String id = lifestats_db.child("Data").child("Time").child(type).push().getKey();
+                            lifestats_db.child("Data").child("Time").child(type).child(id).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast toast = Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
+
+                            });
+                        }
+                    });
                 }
             }
         });
