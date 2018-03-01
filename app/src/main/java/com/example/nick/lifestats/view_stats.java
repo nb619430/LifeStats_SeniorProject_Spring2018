@@ -211,12 +211,16 @@ public class view_stats extends AppCompatActivity
 
         if (id == R.id.profile_info) {
             startActivity(new Intent(view_stats.this, view_profile.class));
+            finish();
         } else if (id == R.id.profile_edit) {
             startActivity(new Intent(view_stats.this, edit_profile.class));
+            finish();
         } else if (id == R.id.user_settings) {
             startActivity(new Intent(view_stats.this, user_settings.class));
+            finish();
         } else if (id == R.id.dashboard_page){
             startActivity(new Intent(view_stats.this, Dashboard.class));
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

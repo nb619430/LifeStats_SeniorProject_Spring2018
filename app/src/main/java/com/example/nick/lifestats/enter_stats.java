@@ -20,11 +20,15 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class enter_stats extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -72,6 +76,18 @@ public class enter_stats extends AppCompatActivity
         adapter_time.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         final EditText input = (EditText) findViewById(R.id.data_et);//field where values will be entered from
+        input.setVisibility(View.GONE);
+
+        final TextView tv = (TextView) findViewById(R.id.tv);
+        tv.setVisibility(View.GONE);
+
+        final TextView symbol = (TextView) findViewById(R.id.input_symbol_tv);
+        symbol.setText("");
+
+        final TextView minutes_tv = (TextView) findViewById(R.id.minutes_tv);
+        minutes_tv.setVisibility(View.GONE);
+
+        final EditText minutes_et = (EditText) findViewById(R.id.minute_et);
 
         //group for radio buttons - Only one can be clicked
         RadioGroup radio_buttons = (RadioGroup)findViewById(R.id.radio_group);
@@ -81,6 +97,12 @@ public class enter_stats extends AppCompatActivity
                 if(checkedId == R.id.financial_radio) {
 
                     data_types.setAdapter(adapter_financial);
+                    input.setVisibility(View.VISIBLE);
+                    tv.setVisibility(View.VISIBLE);
+                    minutes_tv.setVisibility(View.GONE);
+                    minutes_et.setText("");
+                    minutes_et.setVisibility(View.GONE);
+                    symbol.setText("$");
 
                     Button submit = (Button) findViewById(R.id.submit_test);
                     submit.setOnClickListener(new View.OnClickListener() {
@@ -88,11 +110,16 @@ public class enter_stats extends AppCompatActivity
                         public void onClick(View v) {
                             String type = data_types.getSelectedItem().toString();
                             String data = input.getText().toString();
-                            String id = lifestats_db.child("Data").child("Financial").child(type).push().getKey();
-                            lifestats_db.child("Data").child("Financial").child(type).child(id).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+                            //Used for getting data and time for database entry
+                            Calendar c = Calendar.getInstance();
+                            SimpleDateFormat date_time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                            String formattedDate = date_time.format(c.getTime());
+
+                            lifestats_db.child("Data").child("Financial").child(type).child(formattedDate).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Toast toast = Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT);
+                                    Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
                                     toast.show();
                                 }
 
@@ -104,23 +131,37 @@ public class enter_stats extends AppCompatActivity
                 else if(checkedId == R.id.time_radio) {
 
                     data_types.setAdapter(adapter_time);
+                    input.setVisibility(View.VISIBLE);
+                    tv.setVisibility(View.VISIBLE);
+                    symbol.setText("Hours:");
+
+                    minutes_tv.setText("Minutes:");
+                    minutes_tv.setVisibility(View.VISIBLE);
+                    minutes_et.setVisibility(View.VISIBLE);
+
+                    input.requestFocus();//sets it as the first one to input into
 
                     Button submit = (Button) findViewById(R.id.submit_test);
                     submit.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            String type = data_types.getSelectedItem().toString();
-                            String data = input.getText().toString();
-                            String id = lifestats_db.child("Data").child("Time").child(type).push().getKey();
-                            lifestats_db.child("Data").child("Time").child(type).child(id).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast toast = Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT);
-                                    toast.show();
-                                }
+                            public void onClick(View v) {
+                                String hours = input.getText().toString();
+                                String minutes = minutes_et.getText().toString();
+                                String type = data_types.getSelectedItem().toString();
+                                String total_time = hours + " Hours and " + minutes + " Minutes";
 
-                            });
-                        }
+                                //Used for getting data and time for database entry
+                                Calendar c = Calendar.getInstance();
+                                SimpleDateFormat date_time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                String formattedDate = date_time.format(c.getTime());
+
+                                lifestats_db.child("Data").child("Time").child(type).child(formattedDate).setValue(total_time).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
+                                        toast.show();
+                                    }
+                                });
+                            }
                     });
                 }
             }
@@ -169,12 +210,16 @@ public class enter_stats extends AppCompatActivity
 
         if (id == R.id.profile_info) {
             startActivity(new Intent(enter_stats.this, view_profile.class));
+            finish();
         } else if (id == R.id.profile_edit) {
             startActivity(new Intent(enter_stats.this, edit_profile.class));
+            finish();
         } else if (id == R.id.user_settings) {
             startActivity(new Intent(enter_stats.this, user_settings.class));
+            finish();
         } else if (id == R.id.dashboard_page){
             startActivity(new Intent(enter_stats.this, Dashboard.class));
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

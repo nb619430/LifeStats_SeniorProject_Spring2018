@@ -86,12 +86,16 @@ public class user_settings extends AppCompatActivity
 
         if (id == R.id.profile_info) {
             startActivity(new Intent(user_settings.this, view_profile.class));
+            finish();
         } else if (id == R.id.profile_edit) {
             startActivity(new Intent(user_settings.this, edit_profile.class));
+            finish();
         } else if (id == R.id.user_settings) {
             startActivity(new Intent(user_settings.this, user_settings.class));
+            finish();
         } else if (id == R.id.dashboard_page){
             startActivity(new Intent(user_settings.this, Dashboard.class));
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
