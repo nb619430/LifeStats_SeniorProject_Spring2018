@@ -62,7 +62,8 @@ public class enter_stats extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //Creates the Spinner and castes the arrays for the different data types into spinner dropdown items
+        //---------------------------------------------------------------------------
+        //                      INITIALIZES ITEMS
         //---------------------------------------------------------------------------
         final Spinner data_types = (Spinner) findViewById(R.id.data_type_dropdown);
 
@@ -88,6 +89,7 @@ public class enter_stats extends AppCompatActivity
         minutes_tv.setVisibility(View.GONE);
 
         final EditText minutes_et = (EditText) findViewById(R.id.minute_et);
+        //---------------------------------------------------------------------------
 
         //group for radio buttons - Only one can be clicked
         RadioGroup radio_buttons = (RadioGroup)findViewById(R.id.radio_group);
