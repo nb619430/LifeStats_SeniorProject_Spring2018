@@ -146,10 +146,16 @@ public class enter_stats extends AppCompatActivity
                     Button submit = (Button) findViewById(R.id.submit_test);
                     submit.setOnClickListener(new View.OnClickListener() {
                             public void onClick(View v) {
-                                String hours = input.getText().toString();
+                                int zero = 0;
+
+                                //Stores hours and minutes in a 4-digit number - first 2 = hours, next 2 = minutes
                                 String minutes = minutes_et.getText().toString();
+                                    if(minutes.length() == 1){minutes = zero + minutes;}
+                                String hours = input.getText().toString();
+                                    if(hours.length() == 1){hours = zero + hours;}
+
                                 String type = data_types.getSelectedItem().toString();
-                                String total_time = hours + " Hours and " + minutes + " Minutes";
+                                String total_time = hours + minutes;
 
                                 //Used for getting data and time for database entry
                                 Calendar c = Calendar.getInstance();

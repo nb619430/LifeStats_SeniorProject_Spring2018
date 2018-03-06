@@ -9,11 +9,15 @@
     <list default="true" id="decd69ce-da9b-425b-ae65-21473ea3d337" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/enter_stats.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/enter_stats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java" />
     </list>
     <ignored path="$PROJECT_DIR$/app/build/intermediates/assets/" />
     <ignored path="$PROJECT_DIR$/app/build/intermediates/blame/" />
@@ -114,38 +118,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="enter_stats.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="enter_stats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/enter_stats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1887">
-              <caret line="111" column="53" lean-forward="true" selection-start-line="111" selection-start-column="53" selection-end-line="111" selection-end-column="53" />
+            <state relative-caret-position="133">
+              <caret line="150" column="114" lean-forward="false" selection-start-line="150" selection-start-column="114" selection-end-line="150" selection-end-column="114" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1758#2026#0" expanded="true" />
                 <element signature="e#2025#2026#0" expanded="true" />
                 <element signature="e#2214#2245#0" expanded="true" />
                 <element signature="e#2247#2279#0" expanded="true" />
-                <element signature="e#4443#8433#0" expanded="true" />
+                <element signature="e#4443#8739#0" expanded="true" />
                 <element signature="e#5133#6323#0" expanded="true" />
                 <element signature="e#5877#6273#0" expanded="true" />
                 <element signature="e#6272#6273#0" expanded="true" />
                 <element signature="e#6322#6323#0" expanded="true" />
-                <element signature="e#6992#8389#0" expanded="true" />
-                <element signature="e#7916#8335#0" expanded="true" />
-                <element signature="e#8334#8335#0" expanded="true" />
-                <element signature="e#8388#8389#0" expanded="true" />
-                <element signature="e#8432#8433#0" expanded="true" />
+                <element signature="e#6992#8695#0" expanded="true" />
+                <element signature="e#8222#8641#0" expanded="true" />
+                <element signature="e#8640#8641#0" expanded="true" />
+                <element signature="e#8694#8695#0" expanded="true" />
+                <element signature="e#8738#8739#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_stats.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/LoginPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_stats.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3247">
-              <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="107" column="107" lean-forward="false" selection-start-line="107" selection-start-column="107" selection-end-line="107" selection-end-column="107" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7910#7918#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1924,13 +1941,13 @@
         <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_stats.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_view_stats.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/Dashboard.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/edit_profile.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/user_settings.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_profile.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_enter_stats.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/enter_stats.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java" />
       </list>
     </option>
   </component>
@@ -1958,8 +1975,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2084,8 +2103,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2185,7 +2202,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520292810990" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520311692244" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2233,7 +2250,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520292810990" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520311692244" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2395,7 +2412,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520292810995" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520311692247" />
       </method>
     </configuration>
     <list size="1">
@@ -2449,14 +2466,21 @@
       <option name="project" value="LOCAL" />
       <updated>1519881966370</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Data Entry Update V2">
+      <created>1520292855566</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1520292855566</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17548746" sideWeight="0.4929306" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -2472,7 +2496,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34350133" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08033419" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2548,7 +2572,8 @@
     <MESSAGE value="View Stats - V1" />
     <MESSAGE value="Database Link - Complete functionality pushing and pulling" />
     <MESSAGE value="Data Entry Update - ID's are Date/Time &amp; Input Restrictions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data Entry Update - ID's are Date/Time &amp; Input Restrictions" />
+    <MESSAGE value="Data Entry Update V2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data Entry Update V2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2581,7 +2606,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1955">
           <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7910#7918#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2595,16 +2623,16 @@
             <element signature="e#2025#2026#0" expanded="true" />
             <element signature="e#2214#2245#0" expanded="true" />
             <element signature="e#2247#2279#0" expanded="true" />
-            <element signature="e#4443#8433#0" expanded="true" />
+            <element signature="e#4443#8739#0" expanded="true" />
             <element signature="e#5133#6323#0" expanded="true" />
             <element signature="e#5877#6273#0" expanded="true" />
             <element signature="e#6272#6273#0" expanded="true" />
             <element signature="e#6322#6323#0" expanded="true" />
-            <element signature="e#6992#8389#0" expanded="true" />
-            <element signature="e#7916#8335#0" expanded="true" />
-            <element signature="e#8334#8335#0" expanded="true" />
-            <element signature="e#8388#8389#0" expanded="true" />
-            <element signature="e#8432#8433#0" expanded="true" />
+            <element signature="e#6992#8695#0" expanded="true" />
+            <element signature="e#8222#8641#0" expanded="true" />
+            <element signature="e#8640#8641#0" expanded="true" />
+            <element signature="e#8694#8695#0" expanded="true" />
+            <element signature="e#8738#8739#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2649,6 +2677,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2690,16 +2719,16 @@
             <element signature="e#2025#2026#0" expanded="true" />
             <element signature="e#2214#2245#0" expanded="true" />
             <element signature="e#2247#2279#0" expanded="true" />
-            <element signature="e#4443#8433#0" expanded="true" />
+            <element signature="e#4443#8739#0" expanded="true" />
             <element signature="e#5133#6323#0" expanded="true" />
             <element signature="e#5877#6273#0" expanded="true" />
             <element signature="e#6272#6273#0" expanded="true" />
             <element signature="e#6322#6323#0" expanded="true" />
-            <element signature="e#6992#8389#0" expanded="true" />
-            <element signature="e#7916#8335#0" expanded="true" />
-            <element signature="e#8334#8335#0" expanded="true" />
-            <element signature="e#8388#8389#0" expanded="true" />
-            <element signature="e#8432#8433#0" expanded="true" />
+            <element signature="e#6992#8695#0" expanded="true" />
+            <element signature="e#8222#8641#0" expanded="true" />
+            <element signature="e#8640#8641#0" expanded="true" />
+            <element signature="e#8694#8695#0" expanded="true" />
+            <element signature="e#8738#8739#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2744,6 +2773,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2757,16 +2787,16 @@
             <element signature="e#2025#2026#0" expanded="true" />
             <element signature="e#2214#2245#0" expanded="true" />
             <element signature="e#2247#2279#0" expanded="true" />
-            <element signature="e#4443#8433#0" expanded="true" />
+            <element signature="e#4443#8739#0" expanded="true" />
             <element signature="e#5133#6323#0" expanded="true" />
             <element signature="e#5877#6273#0" expanded="true" />
             <element signature="e#6272#6273#0" expanded="true" />
             <element signature="e#6322#6323#0" expanded="true" />
-            <element signature="e#6992#8389#0" expanded="true" />
-            <element signature="e#7916#8335#0" expanded="true" />
-            <element signature="e#8334#8335#0" expanded="true" />
-            <element signature="e#8388#8389#0" expanded="true" />
-            <element signature="e#8432#8433#0" expanded="true" />
+            <element signature="e#6992#8695#0" expanded="true" />
+            <element signature="e#8222#8641#0" expanded="true" />
+            <element signature="e#8640#8641#0" expanded="true" />
+            <element signature="e#8694#8695#0" expanded="true" />
+            <element signature="e#8738#8739#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2804,16 +2834,16 @@
             <element signature="e#2025#2026#0" expanded="true" />
             <element signature="e#2214#2245#0" expanded="true" />
             <element signature="e#2247#2279#0" expanded="true" />
-            <element signature="e#4443#8433#0" expanded="true" />
+            <element signature="e#4443#8739#0" expanded="true" />
             <element signature="e#5133#6323#0" expanded="true" />
             <element signature="e#5877#6273#0" expanded="true" />
             <element signature="e#6272#6273#0" expanded="true" />
             <element signature="e#6322#6323#0" expanded="true" />
-            <element signature="e#6992#8389#0" expanded="true" />
-            <element signature="e#7916#8335#0" expanded="true" />
-            <element signature="e#8334#8335#0" expanded="true" />
-            <element signature="e#8388#8389#0" expanded="true" />
-            <element signature="e#8432#8433#0" expanded="true" />
+            <element signature="e#6992#8695#0" expanded="true" />
+            <element signature="e#8222#8641#0" expanded="true" />
+            <element signature="e#8640#8641#0" expanded="true" />
+            <element signature="e#8694#8695#0" expanded="true" />
+            <element signature="e#8738#8739#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2851,16 +2881,16 @@
             <element signature="e#2025#2026#0" expanded="true" />
             <element signature="e#2214#2245#0" expanded="true" />
             <element signature="e#2247#2279#0" expanded="true" />
-            <element signature="e#4443#8433#0" expanded="true" />
+            <element signature="e#4443#8739#0" expanded="true" />
             <element signature="e#5133#6323#0" expanded="true" />
             <element signature="e#5877#6273#0" expanded="true" />
             <element signature="e#6272#6273#0" expanded="true" />
             <element signature="e#6322#6323#0" expanded="true" />
-            <element signature="e#6992#8389#0" expanded="true" />
-            <element signature="e#7916#8335#0" expanded="true" />
-            <element signature="e#8334#8335#0" expanded="true" />
-            <element signature="e#8388#8389#0" expanded="true" />
-            <element signature="e#8432#8433#0" expanded="true" />
+            <element signature="e#6992#8695#0" expanded="true" />
+            <element signature="e#8222#8641#0" expanded="true" />
+            <element signature="e#8640#8641#0" expanded="true" />
+            <element signature="e#8694#8695#0" expanded="true" />
+            <element signature="e#8738#8739#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2959,6 +2989,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2980,6 +3011,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2994,14 +3026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="94" column="21" lean-forward="false" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3030,14 +3054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3247">
-          <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_enter_stats.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3049,26 +3065,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/enter_stats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
-          <caret line="111" column="53" lean-forward="true" selection-start-line="111" selection-start-column="53" selection-end-line="111" selection-end-column="53" />
+        <state relative-caret-position="133">
+          <caret line="150" column="114" lean-forward="false" selection-start-line="150" selection-start-column="114" selection-end-line="150" selection-end-column="114" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1758#2026#0" expanded="true" />
             <element signature="e#2025#2026#0" expanded="true" />
             <element signature="e#2214#2245#0" expanded="true" />
             <element signature="e#2247#2279#0" expanded="true" />
-            <element signature="e#4443#8433#0" expanded="true" />
+            <element signature="e#4443#8739#0" expanded="true" />
             <element signature="e#5133#6323#0" expanded="true" />
             <element signature="e#5877#6273#0" expanded="true" />
             <element signature="e#6272#6273#0" expanded="true" />
             <element signature="e#6322#6323#0" expanded="true" />
-            <element signature="e#6992#8389#0" expanded="true" />
-            <element signature="e#7916#8335#0" expanded="true" />
-            <element signature="e#8334#8335#0" expanded="true" />
-            <element signature="e#8388#8389#0" expanded="true" />
-            <element signature="e#8432#8433#0" expanded="true" />
+            <element signature="e#6992#8695#0" expanded="true" />
+            <element signature="e#8222#8641#0" expanded="true" />
+            <element signature="e#8640#8641#0" expanded="true" />
+            <element signature="e#8694#8695#0" expanded="true" />
+            <element signature="e#8738#8739#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="107" column="107" lean-forward="false" selection-start-line="107" selection-start-column="107" selection-end-line="107" selection-end-column="107" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7910#7918#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -102,7 +102,11 @@ public class view_stats extends AppCompatActivity
                                     String type = data_types.getSelectedItem().toString();
                                     String data = dataSnapshot.child(type).getValue().toString();
                                     TextView output = (TextView)findViewById(R.id.output_tv);
-                                    output.setText(OutputTrim(data));
+
+                                    String average = financial_average(user_data_financial(data)).toString();
+                                    String total = financial_total(user_data_financial(data)).toString();
+                                    String statistics = "Total Spent: $" + total + ".00\n" + "Average Spent: $" + average + ".00\n";
+                                    output.setText(statistics);
                                 }
 
                                 @Override
@@ -129,7 +133,13 @@ public class view_stats extends AppCompatActivity
                                     String type = data_types.getSelectedItem().toString();
                                     String data = dataSnapshot.child(type).getValue().toString();
                                     TextView output = (TextView)findViewById(R.id.output_tv);
-                                    output.setText(OutputTrim(data));
+
+                                    String total_hours = hours_total(user_data_time(data)).toString();
+                                    String total_minutes = minutes_total(user_data_time(data)).toString();
+                                    String average_hours = time_average_hours(user_data_time(data)).toString();
+                                    String average_minutes = time_average_minutes(user_data_time(data)).toString();
+                                    output.setText("Total Time: " + total_hours + " Hours, and " + total_minutes + " Minutes" + "\n" +
+                                                    "Average Time: " + average_hours + " Hours, and " + average_minutes + " Minutes");
                                 }
 
                                 @Override
@@ -144,32 +154,145 @@ public class view_stats extends AppCompatActivity
         });
     }
 
-    private String OutputTrim(String output){
-        List<String>values = new ArrayList<String>();
+    private List<String> user_data_time(String output) {
+        List<String> time = new ArrayList<String>();
         //values.add(output);
-        for(int i = 0; i < output.length(); i++){
+        for (int i = 0; i < output.length(); i++) {
             int start = 0;
             int end = 0;
-                if(output.charAt(i) == '=') {
-                    start = i;
-                    for (int j = i; j < output.length(); j++) {
-                        if (output.charAt(j) == ',' || output.charAt(j) == '}') {
-                            end = j;
-                            String temp = output.substring(start+1, end);
-                            values.add(temp);
-                            break;
-                        }
+            if (output.charAt(i) == '=') {
+                start = i;
+                for (int j = i; j < output.length(); j++) {
+                    if (output.charAt(j) == ',' || output.charAt(j) == '}') {
+                        end = j;
+                        String temp = output.substring(start + 1, end);
+                        time.add(temp);
+                        break;
                     }
                 }
+            }
         }
+        return time;
+    }//end user_data
+
+    private List<String> user_data_financial(String output) {
+        List<String> values = new ArrayList<String>();
+        //values.add(output);
+        for (int i = 0; i < output.length(); i++) {
+            int start = 0;
+            int end = 0;
+            if (output.charAt(i) == '=') {
+                start = i;
+                for (int j = i; j < output.length(); j++) {
+                    if (output.charAt(j) == ',' || output.charAt(j) == '}') {
+                        end = j;
+                        String temp = output.substring(start + 1, end);
+                        values.add(temp);
+                        break;
+                    }
+                }
+            }
+        }
+        return values;
+    }//end user_data
+
+    private Integer hours_total(List<String>values){
         StringBuilder sb = new StringBuilder();
+        Integer hours = 0;
+        Integer minutes = 0;
+        //gets the total of all the values in the database
+        for (String s : values) {
+            hours = hours + Integer.parseInt(s.substring(0,2));
+            minutes = minutes + Integer.parseInt(s.substring(2,4));
+            if(minutes >= 60){ //rounds minutes up to hours
+                int temp = minutes/60;
+                minutes = minutes%60;
+                hours = hours + temp;
+            }//end if
+        }
+        return hours;
+    }//end output
+
+    private Integer minutes_total(List<String>values){
+        StringBuilder sb = new StringBuilder();
+        Integer minutes = 0;
+        //gets the total of all the values in the database
+        for (String s : values) {
+            minutes = minutes + Integer.parseInt(s.substring(2,4));
+            if(minutes >= 60){ //rounds minutes up to hours
+                minutes = minutes%60;
+            }//end if
+        }
+        return minutes;
+    }//end output
+
+    private Integer time_average_hours(List<String>values){
+        StringBuilder sb = new StringBuilder();
+        Integer hours = 0;
+        Integer minutes = 0;
+        int count = 0;
+        //gets the total of all the values in the database
+        for (String s : values) {
+            count++;
+            hours = hours + Integer.parseInt(s.substring(0,2));
+            minutes = minutes + Integer.parseInt(s.substring(2,4));
+        }
+        minutes = minutes + (hours*60);
+        int avg_minutes = minutes/count;
+        if(avg_minutes >= 60){
+            hours = avg_minutes/60;
+        }
+
+        return hours;
+    }//end output
+
+    private Integer time_average_minutes(List<String>values){
+        StringBuilder sb = new StringBuilder();
+        Integer hours = 0;
+        Integer minutes = 0;
+        int count = 0;
+        //gets the total of all the values in the database
+        for (String s : values) {
+            count++;
+            hours = hours + Integer.parseInt(s.substring(0,2));
+            minutes = minutes + Integer.parseInt(s.substring(2,4));
+        }
+        minutes = minutes + (hours*60);
+        int avg_minutes = minutes/count;
+        if(avg_minutes >= 60){
+            minutes = avg_minutes%60;
+        }
+
+        return minutes;
+    }//end output
+
+    private Integer financial_total(List<String>values){
+        StringBuilder sb = new StringBuilder();
+        Integer total = 0;
+        //gets the total of all the values in the database
         for (String s : values)
         {
+            total = total + Integer.parseInt(s);
             sb.append(s);
             sb.append("\n");
         }
-        return sb.toString();
-    }
+        return total;
+    }//end output
+
+    private Integer financial_average(List<String>values){
+        StringBuilder sb = new StringBuilder();
+        Integer total = 0;
+        Integer count = 0;
+        //gets the total of all the values in the database
+        for (String s : values)
+        {
+            total = total + Integer.parseInt(s);
+            count++;
+            sb.append(s);
+            sb.append("\n");
+        }
+        return (total/count);
+    }//end output
 
     @Override
     public void onBackPressed() {
