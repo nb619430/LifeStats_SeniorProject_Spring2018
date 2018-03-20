@@ -24,6 +24,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,6 +43,8 @@ public class view_stats extends AppCompatActivity
     // Test Message to DB
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference lifestats_db = database.getReference("user");
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    final String id = user.getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +97,7 @@ public class view_stats extends AppCompatActivity
                     Button view = (Button) findViewById(R.id.view_test);
                     view.setOnClickListener(new View.OnClickListener() {
 
-                        DatabaseReference ref = lifestats_db.child("Data").child("Financial");
+                        DatabaseReference ref = lifestats_db.child(id).child("Data").child("Financial");
                         @Override
                         public void onClick(View v) {
                             ref.addValueEventListener(new ValueEventListener() {
@@ -124,7 +128,7 @@ public class view_stats extends AppCompatActivity
                     Button view = (Button) findViewById(R.id.view_test);
                     view.setOnClickListener(new View.OnClickListener() {
 
-                        DatabaseReference ref = lifestats_db.child("Data").child("Time");
+                        DatabaseReference ref = lifestats_db.child(id).child("Data").child("Time");
                         @Override
                         public void onClick(View v) {
                             ref.addValueEventListener(new ValueEventListener() {
@@ -213,6 +217,7 @@ public class view_stats extends AppCompatActivity
         return hours;
     }//end output
 
+
     private Integer minutes_total(List<String>values){
         StringBuilder sb = new StringBuilder();
         Integer minutes = 0;
@@ -225,6 +230,7 @@ public class view_stats extends AppCompatActivity
         }
         return minutes;
     }//end output
+
 
     private Integer time_average_hours(List<String>values){
         StringBuilder sb = new StringBuilder();
@@ -333,17 +339,25 @@ public class view_stats extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.profile_info) {
-            startActivity(new Intent(view_stats.this, view_profile.class));
-            finish();
+            Intent newIntent = new Intent(view_stats.this,view_profile.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         } else if (id == R.id.profile_edit) {
-            startActivity(new Intent(view_stats.this, edit_profile.class));
-            finish();
+            Intent newIntent = new Intent(view_stats.this,edit_profile.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         } else if (id == R.id.user_settings) {
-            startActivity(new Intent(view_stats.this, user_settings.class));
-            finish();
+            Intent newIntent = new Intent(view_stats.this,user_settings.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         } else if (id == R.id.dashboard_page){
-            startActivity(new Intent(view_stats.this, Dashboard.class));
-            finish();
+            Intent newIntent = new Intent(view_stats.this,Dashboard.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

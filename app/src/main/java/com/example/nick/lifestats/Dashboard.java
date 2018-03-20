@@ -14,10 +14,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Dashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference lifestats_db = database.getReference("user");
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +39,9 @@ public class Dashboard extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
+        auth = FirebaseAuth.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String id = user.getUid();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -61,6 +67,37 @@ public class Dashboard extends AppCompatActivity
                 startActivity(new Intent(Dashboard.this, view_stats.class));
             }
         });
+
+        Button logout_btn = (Button) findViewById(R.id.logout_bt);
+        logout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                auth.signOut();
+                Toast.makeText(Dashboard.this, "You Are Now Logged Out",
+                        Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Dashboard.this, user_login.class));
+                finish();
+            }
+        });
+
+        DatabaseReference ref = lifestats_db.child(id).child("Profile");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String first_name = dataSnapshot.child("First Name").getValue().toString();
+                String last_name = dataSnapshot.child("Last Name").getValue().toString();
+                String user_age = dataSnapshot.child("Age").getValue().toString();
+
+                TextView welcome = (TextView) findViewById(R.id.welcomeMessage);
+                String temp = welcome.getText().toString() + " " + first_name + " " + last_name + "!";
+                welcome.setText(temp);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
     }
 
     @Override
@@ -102,19 +139,26 @@ public class Dashboard extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.profile_info) {
-            startActivity(new Intent(Dashboard.this, view_profile.class));
-            finish();
+            Intent newIntent = new Intent(Dashboard.this,view_profile.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         } else if (id == R.id.profile_edit) {
-            startActivity(new Intent(Dashboard.this, edit_profile.class));
-            finish();
+            Intent newIntent = new Intent(Dashboard.this,edit_profile.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         } else if (id == R.id.user_settings) {
-            startActivity(new Intent(Dashboard.this, user_settings.class));
-            finish();
+            Intent newIntent = new Intent(Dashboard.this,user_settings.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         } else if (id == R.id.dashboard_page){
-            startActivity(new Intent(Dashboard.this, Dashboard.class));
-            finish();
+            Intent newIntent = new Intent(Dashboard.this,Dashboard.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

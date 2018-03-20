@@ -24,6 +24,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -118,7 +120,10 @@ public class enter_stats extends AppCompatActivity
                             SimpleDateFormat date_time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                             String formattedDate = date_time.format(c.getTime());
 
-                            lifestats_db.child("Data").child("Financial").child(type).child(formattedDate).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                            String id = user.getUid();
+
+                            lifestats_db.child(id).child("Data").child("Financial").child(type).child(formattedDate).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
@@ -151,8 +156,10 @@ public class enter_stats extends AppCompatActivity
                                 //Stores hours and minutes in a 4-digit number - first 2 = hours, next 2 = minutes
                                 String minutes = minutes_et.getText().toString();
                                     if(minutes.length() == 1){minutes = zero + minutes;}
+                                    if(minutes.length() == 0){minutes = "00";}
                                 String hours = input.getText().toString();
                                     if(hours.length() == 1){hours = zero + hours;}
+                                    if(hours.length() == 0){hours = "00";}
 
                                 String type = data_types.getSelectedItem().toString();
                                 String total_time = hours + minutes;
@@ -162,7 +169,10 @@ public class enter_stats extends AppCompatActivity
                                 SimpleDateFormat date_time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                                 String formattedDate = date_time.format(c.getTime());
 
-                                lifestats_db.child("Data").child("Time").child(type).child(formattedDate).setValue(total_time).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                String id = user.getUid();
+
+                                lifestats_db.child(id).child("Data").child("Time").child(type).child(formattedDate).setValue(total_time).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
@@ -217,17 +227,25 @@ public class enter_stats extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.profile_info) {
-            startActivity(new Intent(enter_stats.this, view_profile.class));
-            finish();
+            Intent newIntent = new Intent(enter_stats.this,view_profile.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         } else if (id == R.id.profile_edit) {
-            startActivity(new Intent(enter_stats.this, edit_profile.class));
-            finish();
+            Intent newIntent = new Intent(enter_stats.this,edit_profile.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         } else if (id == R.id.user_settings) {
-            startActivity(new Intent(enter_stats.this, user_settings.class));
-            finish();
+            Intent newIntent = new Intent(enter_stats.this,user_settings.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         } else if (id == R.id.dashboard_page){
-            startActivity(new Intent(enter_stats.this, Dashboard.class));
-            finish();
+            Intent newIntent = new Intent(enter_stats.this,Dashboard.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(newIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

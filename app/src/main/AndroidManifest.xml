@@ -14,24 +14,7 @@
         android:label="LifeStats"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".LoginPage"
-            android:label="@string/title_activity_login_page" />
-        <activity
-            android:name=".Dashboard"
-            android:label="LifeStats"
-            android:parentActivityName=".LoginPage"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.nick.lifestats.LoginPage" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".view_profile"
             android:label="Your Profile"
@@ -76,6 +59,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.nick.lifestats.Dashboard" />
+        </activity>
+        <activity android:name=".user_registration"></activity>
+        <activity android:name=".user_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
