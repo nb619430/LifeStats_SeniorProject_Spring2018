@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +53,7 @@ public class Dashboard extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button input_btn = (Button) findViewById(R.id.submit_btn);
+        ImageView input_btn = (ImageView) findViewById(R.id.input_btn);
         input_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +61,7 @@ public class Dashboard extends AppCompatActivity
             }
         });
 
-        Button viewdata_btn = (Button) findViewById(R.id.view_btn);
+        ImageView viewdata_btn = (ImageView) findViewById(R.id.view_btn);
         viewdata_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +69,7 @@ public class Dashboard extends AppCompatActivity
             }
         });
 
-        Button logout_btn = (Button) findViewById(R.id.logout_bt);
+        ImageView logout_btn = (ImageView) findViewById(R.id.logout_bt);
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

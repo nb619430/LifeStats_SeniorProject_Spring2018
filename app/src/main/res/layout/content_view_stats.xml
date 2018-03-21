@@ -14,39 +14,41 @@
     tools:showIn="@layout/app_bar_view_stats">
 
     <TextView
-        android:text="Select General Type of Data:"
+        android:id="@+id/tv_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_type"
+        android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="What Type Of Data Do You Want To See?"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textStyle="bold" />
 
     <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/data_type_dropdown"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tv_subtype"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="View Data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/view_test"
+        android:layout_width = "match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp" />
+        android:layout_marginBottom="70dp"
+        android:text="Generate Statistics"
+        android:textStyle="bold" />
 
         <RadioGroup
         android:id="@+id/radio_group"
         android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/tv_type"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        >
 
         <RadioButton
             android:text="Financial"
@@ -56,6 +58,7 @@
             android:layout_weight="1"
             android:layout_below="@+id/tv_type"
             android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="11dp" />
 
@@ -63,6 +66,7 @@
             android:text="Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:id="@+id/time_radio"
             android:layout_below="@+id/financial_radio"
             android:layout_alignParentLeft="true"
@@ -70,14 +74,16 @@
     </RadioGroup>
 
     <TextView
-        android:text="Select Specific Data Type"
+        android:id="@+id/tv_subtype"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_subtype"
+        android:layout_centerInParent="true"
         android:layout_below="@+id/radio_group"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp" />
+        android:layout_marginTop="37dp"
+        android:text="What Category Would You Like To See?"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/output_tv"
@@ -91,6 +97,9 @@
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="70dp"
-        android:text="Nothing to Show..." />
+        android:text="Nothing to Show..."
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textStyle="bold" />
 
 </RelativeLayout>

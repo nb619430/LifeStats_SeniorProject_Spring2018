@@ -13,4 +13,15 @@
     tools:context="com.example.nick.lifestats.view_profile"
     tools:showIn="@layout/app_bar_view_profile">
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Your Profile"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 </RelativeLayout>

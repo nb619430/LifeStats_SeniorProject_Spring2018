@@ -14,31 +14,37 @@
     tools:showIn="@layout/app_bar_enter_stats">
 
     <TextView
-        android:text="Select General Type of Data:"
+        android:id="@+id/tv_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_type"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="What Kind Of Data Do You Want To Enter?"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textStyle="bold" />
 
     <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/data_type_dropdown"
+        android:layout_width="200dp"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tv_subtype"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/submit_test"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="31dp"
-        android:text="Submit Data" />
+        android:layout_marginTop="30dp"
+        android:text="Log Your Data"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/data_et"
@@ -58,39 +64,40 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/tv_type"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_centerInParent="true"
+        >
 
-    <RadioButton
-        android:text="Financial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/financial_radio"
-        android:layout_weight="1"
-        android:layout_below="@+id/tv_type"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp" />
+        <RadioButton
+            android:id="@+id/financial_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv_type"
+            android:layout_marginTop="11dp"
+            android:layout_weight="1"
+            android:text="Financial" />
 
-    <RadioButton
+        <RadioButton
     android:text="Time"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/time_radio"
-        android:layout_below="@+id/financial_radio"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-</RadioGroup>
+
+    </RadioGroup>
 
     <TextView
-        android:text="Select Specific Data Type"
+        android:id="@+id/tv_subtype"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_subtype"
         android:layout_below="@+id/radio_group"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="What Category Do You Want To Add To?"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv"
@@ -99,7 +106,8 @@
         android:layout_above="@+id/input_symbol_tv"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="13dp"
-        android:text="Enter Data:"
+        android:text="Amount You Would Like To Enter"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textStyle="normal|bold" />
 
     <TextView
@@ -111,6 +119,7 @@
         android:layout_toLeftOf="@+id/data_et"
         android:layout_toStartOf="@+id/data_et"
         android:text="$"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="15dp"
         android:textStyle="bold" />
 
@@ -136,5 +145,6 @@
         android:layout_toLeftOf="@+id/minute_et"
         android:layout_toStartOf="@+id/minute_et"
         android:text="Minutes:"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textStyle="bold" />
 </RelativeLayout>

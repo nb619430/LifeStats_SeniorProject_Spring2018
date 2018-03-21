@@ -10,10 +10,20 @@
     -->
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ls_icon"
         android:label="LifeStats"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".Dashboard"
+            android:label="Dashboard"
+            android:parentActivityName=".user_login"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.nick.lifestats.user_login" />
+        </activity>
 
         <activity
             android:name=".view_profile"
@@ -44,7 +54,7 @@
         </activity>
         <activity
             android:name=".enter_stats"
-            android:label="@string/title_activity_enter_stats"
+            android:label="Enter Stats"
             android:parentActivityName=".Dashboard"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -53,7 +63,7 @@
         </activity>
         <activity
             android:name=".view_stats"
-            android:label="@string/title_activity_view_stats"
+            android:label="Your Statistics"
             android:parentActivityName=".Dashboard"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
