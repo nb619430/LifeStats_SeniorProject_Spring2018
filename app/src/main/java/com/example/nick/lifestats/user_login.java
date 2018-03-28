@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +37,10 @@ public class user_login extends AppCompatActivity {
             }
         });
 
-        Button login = (Button)findViewById(R.id.login_btn);
+        final ProgressBar loading = (ProgressBar) findViewById(R.id.progressBar);
+        loading.setVisibility(View.INVISIBLE);
+
+        final Button login = (Button)findViewById(R.id.login_btn);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,21 +50,42 @@ public class user_login extends AppCompatActivity {
                 String email = email_et.getText().toString().trim();
                 String password = password_et.getText().toString().trim();
 
-                database.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(user_login.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (!task.isSuccessful()) {
-                                    Toast.makeText(user_login.this, "Login Failed...Please Try Again",
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(user_login.this, "Welcome Back!",
-                                            Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(user_login.this, Dashboard.class));
-                                    finish();
+                if(email.equals("")){
+                    Toast.makeText(user_login.this, "No Email Entered",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+                else if(password.equals("")){
+                    Toast.makeText(user_login.this, "No Password Entered",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+                else if(email.equals("") && password.equals("")){
+                    Toast.makeText(user_login.this, "No Email or Password Entered",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+                else {
+                    login.setVisibility(View.INVISIBLE); //replaces login with progress circle
+                    loading.setVisibility(View.VISIBLE);
+                    database.signInWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(user_login.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (!task.isSuccessful()) {
+                                        Toast.makeText(user_login.this, "Login Failed...Please Try Again",
+                                                Toast.LENGTH_SHORT).show();
+                                        loading.setVisibility(View.INVISIBLE);
+                                        login.setVisibility(View.VISIBLE);
+                                    } else {
+                                        Toast.makeText(user_login.this, "Welcome Back!",
+                                                Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(user_login.this, Dashboard.class));
+                                        finish();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                }//end else
             }
         });
 

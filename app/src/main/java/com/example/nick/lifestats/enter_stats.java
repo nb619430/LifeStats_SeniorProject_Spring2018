@@ -2,6 +2,7 @@ package com.example.nick.lifestats;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +18,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -59,6 +61,7 @@ public class enter_stats extends AppCompatActivity
         //                      INITIALIZES ITEMS
         //---------------------------------------------------------------------------
         final Spinner data_types = (Spinner) findViewById(R.id.data_type_dropdown);
+        data_types.setVisibility(View.INVISIBLE);
 
         final ArrayAdapter<CharSequence> adapter_financial = ArrayAdapter.createFromResource(this, R.array.data_type_array_money, android.R.layout.simple_spinner_item);
             adapter_financial.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -84,99 +87,100 @@ public class enter_stats extends AppCompatActivity
         final EditText minutes_et = (EditText) findViewById(R.id.minute_et);
         //---------------------------------------------------------------------------
 
-        //group for radio buttons - Only one can be clicked
-        RadioGroup radio_buttons = (RadioGroup)findViewById(R.id.radio_group);
-        radio_buttons.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        //final int[] subcategoryBit = {0};
+        ImageView financial_btn = (ImageView) findViewById(R.id.financial_button);
+        financial_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.financial_radio) {
+            public void onClick(View view) {
+                //subcategoryBit[0]++;
+                data_types.setAdapter(adapter_financial);
+                data_types.setVisibility(View.VISIBLE);
+                input.setVisibility(View.VISIBLE);
+                tv.setVisibility(View.VISIBLE);
+                minutes_tv.setVisibility(View.GONE);
+                minutes_et.setText("");
+                minutes_et.setVisibility(View.GONE);
+                symbol.setText("$");
 
-                    data_types.setAdapter(adapter_financial);
-                    input.setVisibility(View.VISIBLE);
-                    tv.setVisibility(View.VISIBLE);
-                    minutes_tv.setVisibility(View.GONE);
-                    minutes_et.setText("");
-                    minutes_et.setVisibility(View.GONE);
-                    symbol.setText("$");
+                Button submit = (Button) findViewById(R.id.submit_test);
+                submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String type = data_types.getSelectedItem().toString();
+                        String data = input.getText().toString();
 
-                    Button submit = (Button) findViewById(R.id.submit_test);
-                    submit.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            String type = data_types.getSelectedItem().toString();
-                            String data = input.getText().toString();
+                        //Used for getting data and time for database entry
+                        Calendar c = Calendar.getInstance();
+                        SimpleDateFormat date_time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        String formattedDate = date_time.format(c.getTime());
 
-                            //Used for getting data and time for database entry
-                            Calendar c = Calendar.getInstance();
-                            SimpleDateFormat date_time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                            String formattedDate = date_time.format(c.getTime());
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String id = user.getUid();
 
-                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                            String id = user.getUid();
-
-                            lifestats_db.child(id).child("Data").child("Financial").child(type).child(formattedDate).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
-                                    toast.show();
-                                }
-
-                            });
-                        }
-                    });
-                }
-
-                else if(checkedId == R.id.time_radio) {
-
-                    data_types.setAdapter(adapter_time);
-                    input.setVisibility(View.VISIBLE);
-                    tv.setVisibility(View.VISIBLE);
-                    symbol.setText("Hours:");
-
-                    minutes_tv.setText("Minutes:");
-                    minutes_tv.setVisibility(View.VISIBLE);
-                    minutes_et.setVisibility(View.VISIBLE);
-
-                    input.requestFocus();//sets it as the first one to input into
-
-                    Button submit = (Button) findViewById(R.id.submit_test);
-                    submit.setOnClickListener(new View.OnClickListener() {
-                            public void onClick(View v) {
-                                int zero = 0;
-
-                                //Stores hours and minutes in a 4-digit number - first 2 = hours, next 2 = minutes
-                                String minutes = minutes_et.getText().toString();
-                                    if(minutes.length() == 1){minutes = zero + minutes;}
-                                    if(minutes.length() == 0){minutes = "00";}
-                                String hours = input.getText().toString();
-                                    if(hours.length() == 1){hours = zero + hours;}
-                                    if(hours.length() == 0){hours = "00";}
-
-                                String type = data_types.getSelectedItem().toString();
-                                String total_time = hours + minutes;
-
-                                //Used for getting data and time for database entry
-                                Calendar c = Calendar.getInstance();
-                                SimpleDateFormat date_time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                                String formattedDate = date_time.format(c.getTime());
-
-                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                String id = user.getUid();
-
-                                lifestats_db.child(id).child("Data").child("Time").child(type).child(formattedDate).setValue(total_time).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
-                                        toast.show();
-                                    }
-                                });
+                        lifestats_db.child(id).child("Data").child("Financial").child(type).child(formattedDate).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
+                                toast.show();
                             }
-                    });
-                }
+
+                        });
+                    }
+                });
             }
         });
 
+        ImageView time_button = (ImageView) findViewById(R.id.time_button);
+        time_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data_types.setAdapter(adapter_time);
+                data_types.setVisibility(View.VISIBLE);
+                input.setVisibility(View.VISIBLE);
+                tv.setVisibility(View.VISIBLE);
+                symbol.setText("Hours:");
 
+                minutes_tv.setText("Minutes:");
+                minutes_tv.setVisibility(View.VISIBLE);
+                minutes_et.setVisibility(View.VISIBLE);
+
+                input.requestFocus();//sets it as the first one to input into
+
+                Button submit = (Button) findViewById(R.id.submit_test);
+                submit.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        int zero = 0;
+
+                        //Stores hours and minutes in a 4-digit number - first 2 = hours, next 2 = minutes
+                        String minutes = minutes_et.getText().toString();
+                        if(minutes.length() == 1){minutes = zero + minutes;}
+                        if(minutes.length() == 0){minutes = "00";}
+                        String hours = input.getText().toString();
+                        if(hours.length() == 1){hours = zero + hours;}
+                        if(hours.length() == 0){hours = "00";}
+
+                        String type = data_types.getSelectedItem().toString();
+                        String total_time = hours + minutes;
+
+                        //Used for getting data and time for database entry
+                        Calendar c = Calendar.getInstance();
+                        SimpleDateFormat date_time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        String formattedDate = date_time.format(c.getTime());
+
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String id = user.getUid();
+
+                        lifestats_db.child(id).child("Data").child("Time").child(type).child(formattedDate).setValue(total_time).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                        });
+                    }
+                });
+            }
+        });
     }
 
     @Override

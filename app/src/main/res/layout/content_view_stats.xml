@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_enter_stats"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.nick.lifestats.view_stats"
     tools:showIn="@layout/app_bar_view_stats">
@@ -17,89 +13,109 @@
         android:id="@+id/tv_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:text="What Type Of Data Do You Want To See?"
         android:textAlignment="center"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/data_type_dropdown"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_subtype"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginEnd="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_subtype"
+        app:layout_constraintStart_toStartOf="@+id/tv_subtype"
+        app:layout_constraintTop_toTopOf="@+id/tv_subtype" />
 
     <Button
         android:id="@+id/view_test"
-        android:layout_width = "match_parent"
+        android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginStart="8dp"
         android:text="Generate Statistics"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="wrap_content"
-            android:layout_centerInParent="true"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/tv_type"
-        >
-
-        <RadioButton
-            android:text="Financial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/financial_radio"
-            android:layout_weight="1"
-            android:layout_below="@+id/tv_type"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="11dp" />
-
-        <RadioButton
-            android:text="Time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:id="@+id/time_radio"
-            android:layout_below="@+id/financial_radio"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-    </RadioGroup>
 
     <TextView
         android:id="@+id/tv_subtype"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/radio_group"
-        android:layout_marginTop="37dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="168dp"
         android:text="What Category Would You Like To See?"
         android:textAlignment="center"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/output_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="316dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/data_type_dropdown"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="70dp"
-        android:text="Nothing to Show..."
+        android:layout_marginBottom="228dp"
+        android:layout_marginStart="8dp"
         android:textAlignment="center"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/financial_button"
+        android:layout_width="70dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/money" />
+
+    <ImageView
+        android:id="@+id/time_button"
+        android:layout_width="70dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/time" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="108dp"
+        android:text="Financial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="108dp"
+        android:text="Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

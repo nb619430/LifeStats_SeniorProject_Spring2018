@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_enter_stats"
@@ -17,134 +17,154 @@
         android:id="@+id/tv_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:text="What Kind Of Data Do You Want To Enter?"
         android:textAlignment="center"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Spinner
         android:id="@+id/data_type_dropdown"
         android:layout_width="200dp"
-        android:layout_centerInParent="true"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_subtype"
-        android:layout_centerHorizontal="true" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtype"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
         android:id="@+id/submit_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="31dp"
         android:layout_marginTop="30dp"
         android:text="Log Your Data"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <EditText
         android:id="@+id/data_et"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/input_symbol_tv"
-        android:layout_alignBottom="@+id/input_symbol_tv"
-        android:layout_centerHorizontal="true"
+        android:layout_height="50dp"
+        android:layout_marginBottom="156dp"
         android:ems="10"
         android:inputType="number"
         android:textAllCaps="false"
-        android:textStyle="normal|italic" />
-
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/tv_type"
-        android:layout_centerInParent="true"
-        >
-
-        <RadioButton
-            android:id="@+id/financial_radio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/tv_type"
-            android:layout_marginTop="11dp"
-            android:layout_weight="1"
-            android:text="Financial" />
-
-        <RadioButton
-    android:text="Time"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/time_radio"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    </RadioGroup>
+        android:textStyle="normal|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/tv_subtype"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radio_group"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="120dp"
         android:text="What Category Do You Want To Add To?"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_type" />
 
     <TextView
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/input_symbol_tv"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="212dp"
         android:text="Amount You Would Like To Enter"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/input_symbol_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="64dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/submit_test"
-        android:layout_marginBottom="76dp"
-        android:layout_toLeftOf="@+id/data_et"
-        android:layout_toStartOf="@+id/data_et"
+        android:layout_marginBottom="168dp"
         android:text="$"
+        android:textAlignment="textEnd"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="15dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/minute_et"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/data_et"
-        android:layout_marginTop="14dp"
-        android:layout_toEndOf="@+id/input_symbol_tv"
-        android:layout_toRightOf="@+id/input_symbol_tv"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:inputType="number"
         android:textStyle="italic"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/submit_test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/minutes_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/minute_et"
-        android:layout_alignBottom="@+id/minute_et"
-        android:layout_toLeftOf="@+id/minute_et"
-        android:layout_toStartOf="@+id/minute_et"
+        android:layout_marginBottom="120dp"
+        android:layout_marginStart="8dp"
         android:text="Minutes:"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textStyle="bold" />
-</RelativeLayout>
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/financial_button"
+        android:layout_width="70dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/money" />
+
+    <ImageView
+        android:id="@+id/time_button"
+        android:layout_width="69dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/time" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="90dp"
+        android:text="Financial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="98dp"
+        android:layout_marginTop="90dp"
+        android:text="Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

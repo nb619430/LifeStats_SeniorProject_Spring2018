@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -65,6 +66,7 @@ public class view_stats extends AppCompatActivity
         //Creates the Spinner and castes the arrays for the different data types into spinner dropdown items
         //---------------------------------------------------------------------------
         final Spinner data_types = (Spinner) findViewById(R.id.data_type_dropdown);
+        data_types.setVisibility(View.INVISIBLE);
 
         final ArrayAdapter<CharSequence> adapter_financial = ArrayAdapter.createFromResource(this, R.array.data_type_array_money, android.R.layout.simple_spinner_item);
         adapter_financial.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -77,76 +79,95 @@ public class view_stats extends AppCompatActivity
 
         //final EditText input = (EditText) findViewById(R.id.data_et);//field where values will be entered from
 
-        //group for radio buttons - Only one can be clicked
-        RadioGroup radio_buttons = (RadioGroup)findViewById(R.id.radio_group);
-        radio_buttons.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        ImageView financial_button =(ImageView) findViewById(R.id.financial_button);
+        financial_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.financial_radio) {
-
-                    data_types.setAdapter(adapter_financial);
-                    Button view = (Button) findViewById(R.id.view_test);
-                    view.setOnClickListener(new View.OnClickListener() {
-
-                        DatabaseReference ref = lifestats_db.child(id).child("Data").child("Financial");
-                        @Override
-                        public void onClick(View v) {
-                            ref.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    String type = data_types.getSelectedItem().toString();
+            public void onClick(View view) {
+                data_types.setAdapter(adapter_financial);
+                data_types.setVisibility(View.VISIBLE);
+                Button viewstats = (Button) findViewById(R.id.view_test);
+                viewstats.setOnClickListener(new View.OnClickListener() {
+                    DatabaseReference ref = lifestats_db.child(id).child("Data").child("Financial");
+                    @Override
+                    public void onClick(View v) {
+                        ref.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                String type = data_types.getSelectedItem().toString();
+                                if(dataSnapshot.child(type).exists()) {
                                     String data = dataSnapshot.child(type).getValue().toString();
-                                    TextView output = (TextView)findViewById(R.id.output_tv);
-
-                                    String average = financial_average(user_data_financial(data)).toString();
-                                    String total = financial_total(user_data_financial(data)).toString();
-                                    String statistics = "Total Spent: $" + total + ".00\n" + "Average Spent: $" + average + ".00\n";
-                                    output.setText(statistics);
+                                    TextView output = (TextView) findViewById(R.id.output_tv);
+                                    if (data.equals("")) {
+                                        output.setText("No Data Found!");
+                                    } else {
+                                        String average = financial_average(user_data_financial(data)).toString();
+                                        String total = financial_total(user_data_financial(data)).toString();
+                                        String statistics = "Total Spent: $" + total + ".00\n" + "Average Spent: $" + average + ".00\n";
+                                        output.setText(statistics);
+                                    }
                                 }
-
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
+                                else{
+                                    TextView output = (TextView) findViewById(R.id.output_tv);
+                                    output.setText("No data Found!");
                                 }
-                            });
-                        }
-                    });
-                }
+                            }
 
-                else if(checkedId == R.id.time_radio) {
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
 
-                    data_types.setAdapter(adapter_time);
-                    Button view = (Button) findViewById(R.id.view_test);
-                    view.setOnClickListener(new View.OnClickListener() {
-
-                        DatabaseReference ref = lifestats_db.child(id).child("Data").child("Time");
-                        @Override
-                        public void onClick(View v) {
-                            ref.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    String type = data_types.getSelectedItem().toString();
-                                    String data = dataSnapshot.child(type).getValue().toString();
-                                    TextView output = (TextView)findViewById(R.id.output_tv);
-
-                                    String total_hours = hours_total(user_data_time(data)).toString();
-                                    String total_minutes = minutes_total(user_data_time(data)).toString();
-                                    String average_hours = time_average_hours(user_data_time(data)).toString();
-                                    String average_minutes = time_average_minutes(user_data_time(data)).toString();
-                                    output.setText("Total Time: " + total_hours + " Hours, and " + total_minutes + " Minutes" + "\n" +
-                                                    "Average Time: " + average_hours + " Hours, and " + average_minutes + " Minutes");
-                                }
-
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
-                                }
-                            });
-                        }
-                    });
-                }
+                            }
+                        });
+                    }
+                });
             }
         });
+
+        ImageView time_button = (ImageView) findViewById(R.id.time_button);
+        time_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data_types.setAdapter(adapter_time);
+                data_types.setVisibility(View.VISIBLE);
+                Button viewstats = (Button) findViewById(R.id.view_test);
+                viewstats.setOnClickListener(new View.OnClickListener() {
+
+                    DatabaseReference ref = lifestats_db.child(id).child("Data").child("Time");
+                    @Override
+                    public void onClick(View v) {
+                        ref.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                String type = data_types.getSelectedItem().toString();
+                                if(dataSnapshot.child(type).exists()) {
+                                    String data = dataSnapshot.child(type).getValue().toString();
+                                    TextView output = (TextView) findViewById(R.id.output_tv);
+                                    if (data.equals(null)) {
+                                        output.setText("No data Found");
+                                    } else {
+                                        String total_hours = hours_total(user_data_time(data)).toString();
+                                        String total_minutes = minutes_total(user_data_time(data)).toString();
+                                        String average_hours = time_average_hours(user_data_time(data)).toString();
+                                        String average_minutes = time_average_minutes(user_data_time(data)).toString();
+                                        output.setText("Total Time: " + total_hours + " Hours, and " + total_minutes + " Minutes" + "\n" +
+                                                "Average Time: " + average_hours + " Hours, and " + average_minutes + " Minutes");
+                                    }
+                                }
+                                else{
+                                    TextView output = (TextView) findViewById(R.id.output_tv);
+                                    output.setText("No Data Found!");
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
     }
 
     private List<String> user_data_time(String output) {
