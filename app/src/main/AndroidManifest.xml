@@ -14,7 +14,6 @@
         android:label="LifeStats"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".Dashboard"
             android:label="Dashboard"
@@ -24,7 +23,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.nick.lifestats.user_login" />
         </activity>
-
         <activity
             android:name=".view_profile"
             android:label="Your Profile"
@@ -70,7 +68,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.nick.lifestats.Dashboard" />
         </activity>
-        <activity android:name=".user_registration"></activity>
+        <activity android:name=".user_registration" />
         <activity android:name=".user_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -78,6 +76,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".finance_graph"></activity>
     </application>
 
 </manifest>

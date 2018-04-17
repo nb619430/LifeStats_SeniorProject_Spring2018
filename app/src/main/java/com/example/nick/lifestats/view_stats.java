@@ -79,6 +79,17 @@ public class view_stats extends AppCompatActivity
 
         //final EditText input = (EditText) findViewById(R.id.data_et);//field where values will be entered from
 
+
+        //TESTING THE GRAPH BUTTON
+        Button testGraph = (Button) findViewById(R.id.graph_btn);
+        testGraph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(view_stats.this, finance_graph.class));
+            }
+        });
+        //END TESTING AREA
+
         ImageView financial_button =(ImageView) findViewById(R.id.financial_button);
         financial_button.setOnClickListener(new View.OnClickListener() {
             @Override
