@@ -15,24 +15,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="decd69ce-da9b-425b-ae65-21473ea3d337" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/graph.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/finance_graph.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/graph.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/graph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_finance_graph.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_finance_graph.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_view_stats.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_view_stats.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/app/build/intermediates/assets/" />
     <ignored path="$PROJECT_DIR$/app/build/intermediates/blame/" />
@@ -181,7 +174,7 @@
       <file leaf-file-name="view_stats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="1292">
               <caret line="117" column="62" lean-forward="false" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
               <folding>
                 <element signature="e#3861#4057#0" expanded="true" />
@@ -194,11 +187,9 @@
       <file leaf-file-name="Dashboard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/Dashboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
+            <state relative-caret-position="17">
               <caret line="59" column="77" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="77" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -219,14 +210,16 @@
       <file leaf-file-name="graph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2210">
-              <caret line="130" column="96" lean-forward="false" selection-start-line="130" selection-start-column="96" selection-end-line="130" selection-end-column="96" />
+            <state relative-caret-position="-604">
+              <caret line="61" column="41" lean-forward="false" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1517#1749#0" expanded="true" />
-                <element signature="e#1748#1749#0" expanded="true" />
-                <element signature="e#4495#4503#0" expanded="true" />
-                <element signature="e#4549#4556#0" expanded="true" />
+                <element signature="e#1571#1803#0" expanded="true" />
+                <element signature="e#1802#1803#0" expanded="true" />
+                <element signature="e#2615#2623#0" expanded="true" />
+                <element signature="e#2891#2898#0" expanded="true" />
+                <element signature="e#3828#3836#0" expanded="true" />
+                <element signature="e#3898#3905#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -235,8 +228,8 @@
       <file leaf-file-name="enter_stats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/enter_stats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="176" column="45" lean-forward="false" selection-start-line="175" selection-start-column="32" selection-end-line="176" selection-end-column="45" />
+            <state relative-caret-position="384">
+              <caret line="175" column="32" lean-forward="false" selection-start-line="175" selection-start-column="32" selection-end-line="176" selection-end-column="45" />
               <folding>
                 <element signature="e#6306#8838#0" expanded="true" />
                 <element signature="e#8837#8838#0" expanded="true" />
@@ -2029,12 +2022,12 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/Dashboard.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_finance_graph.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_view_stats.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/finance_graph.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/graph.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_finance_graph.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/graph.java" />
       </list>
     </option>
   </component>
@@ -2420,7 +2413,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523994728453" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523999249177" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2468,7 +2461,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523994728454" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523999249178" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2651,7 +2644,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523994728458" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523999249181" />
       </method>
     </configuration>
     <list size="1">
@@ -2747,7 +2740,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523989702803</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Graph Update - Data for graph is determined by previous pages">
+      <created>1523994842759</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1523994842759</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2862,7 +2862,8 @@
     <MESSAGE value="Major UI Updates - Dashboard, Enter Stats, and View Stats" />
     <MESSAGE value="UI Updates - Dashboard, Enter Stats, and View Stats for user testing" />
     <MESSAGE value="Graph Added - Test Data Only" />
-    <option name="LAST_COMMIT_MESSAGE" value="Graph Added - Test Data Only" />
+    <MESSAGE value="Graph Update - Data for graph is determined by previous pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph Update - Data for graph is determined by previous pages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3178,27 +3179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/Dashboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="59" column="77" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/enter_stats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="176" column="45" lean-forward="false" selection-start-line="175" selection-start-column="32" selection-end-line="176" selection-end-column="45" />
-          <folding>
-            <element signature="e#6306#8838#0" expanded="true" />
-            <element signature="e#8837#8838#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_stats.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -3232,6 +3212,25 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="78" column="33" lean-forward="false" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/Dashboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="59" column="77" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_finance_graph.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -3245,7 +3244,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="1292">
           <caret line="117" column="62" lean-forward="false" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
           <folding>
             <element signature="e#3861#4057#0" expanded="true" />
@@ -3254,27 +3253,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/enter_stats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="78" column="33" lean-forward="false" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="384">
+          <caret line="175" column="32" lean-forward="false" selection-start-line="175" selection-start-column="32" selection-end-line="176" selection-end-column="45" />
+          <folding>
+            <element signature="e#6306#8838#0" expanded="true" />
+            <element signature="e#8837#8838#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="130" column="96" lean-forward="false" selection-start-line="130" selection-start-column="96" selection-end-line="130" selection-end-column="96" />
+        <state relative-caret-position="-604">
+          <caret line="61" column="41" lean-forward="false" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1517#1749#0" expanded="true" />
-            <element signature="e#1748#1749#0" expanded="true" />
-            <element signature="e#4495#4503#0" expanded="true" />
-            <element signature="e#4549#4556#0" expanded="true" />
+            <element signature="e#1571#1803#0" expanded="true" />
+            <element signature="e#1802#1803#0" expanded="true" />
+            <element signature="e#2615#2623#0" expanded="true" />
+            <element signature="e#2891#2898#0" expanded="true" />
+            <element signature="e#3828#3836#0" expanded="true" />
+            <element signature="e#3898#3905#0" expanded="true" />
           </folding>
         </state>
       </provider>
