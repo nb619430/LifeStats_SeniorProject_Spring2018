@@ -79,16 +79,23 @@ public class view_stats extends AppCompatActivity
 
         //final EditText input = (EditText) findViewById(R.id.data_et);//field where values will be entered from
 
-
-        //TESTING THE GRAPH BUTTON
-        Button testGraph = (Button) findViewById(R.id.graph_btn);
-        testGraph.setOnClickListener(new View.OnClickListener() {
+        final Button dashboard = (Button) findViewById(R.id.back_dash);
+        dashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(view_stats.this, finance_graph.class));
+                startActivity(new Intent(view_stats.this, Dashboard.class));
             }
         });
         //END TESTING AREA
+
+        final Button graph = (Button) findViewById(R.id.graph_btn);
+        graph.setVisibility(View.INVISIBLE);
+
+        final Button viewstats_finance = (Button) findViewById(R.id.view_test);
+        viewstats_finance.setVisibility(View.INVISIBLE);
+
+        final Button viewstats_time = (Button) findViewById(R.id.view_test);
+        viewstats_time.setVisibility(View.INVISIBLE);
 
         ImageView financial_button =(ImageView) findViewById(R.id.financial_button);
         financial_button.setOnClickListener(new View.OnClickListener() {
@@ -96,8 +103,20 @@ public class view_stats extends AppCompatActivity
             public void onClick(View view) {
                 data_types.setAdapter(adapter_financial);
                 data_types.setVisibility(View.VISIBLE);
-                Button viewstats = (Button) findViewById(R.id.view_test);
-                viewstats.setOnClickListener(new View.OnClickListener() {
+                graph.setVisibility(View.VISIBLE);
+
+                graph.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {//This button lets the graph know which category to display
+                        Intent intent = new Intent(view_stats.this, graph.class);
+                        intent.putExtra("category", "Financial");
+                        intent.putExtra("subcategory", data_types.getSelectedItem().toString());
+                        startActivity(intent);
+                    }
+                });
+
+                viewstats_finance.setVisibility(View.VISIBLE);
+                viewstats_finance.setOnClickListener(new View.OnClickListener() {
                     DatabaseReference ref = lifestats_db.child(id).child("Data").child("Financial");
                     @Override
                     public void onClick(View v) {
@@ -139,9 +158,20 @@ public class view_stats extends AppCompatActivity
             public void onClick(View view) {
                 data_types.setAdapter(adapter_time);
                 data_types.setVisibility(View.VISIBLE);
-                Button viewstats = (Button) findViewById(R.id.view_test);
-                viewstats.setOnClickListener(new View.OnClickListener() {
+                viewstats_time.setVisibility(View.VISIBLE);
+                graph.setVisibility(View.VISIBLE);
 
+                graph.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {//This button lets the graph know which category to display
+                        Intent intent = new Intent(view_stats.this, graph.class);
+                        intent.putExtra("category", "Time");
+                        intent.putExtra("subcategory", data_types.getSelectedItem().toString());
+                        startActivity(intent);
+                    }
+                });
+
+                viewstats_time.setOnClickListener(new View.OnClickListener() {
                     DatabaseReference ref = lifestats_db.child(id).child("Data").child("Time");
                     @Override
                     public void onClick(View v) {
