@@ -53,6 +53,14 @@ public class Dashboard extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        ImageView profile_btn = (ImageView) findViewById(R.id.viewprofile_bt);
+        profile_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this, view_profile.class));
+            }
+        });
+
         ImageView input_btn = (ImageView) findViewById(R.id.input_btn);
         input_btn.setOnClickListener(new View.OnClickListener() {
             @Override

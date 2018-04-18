@@ -78,8 +78,6 @@ public class user_login extends AppCompatActivity {
                                         loading.setVisibility(View.INVISIBLE);
                                         login.setVisibility(View.VISIBLE);
                                     } else {
-                                        Toast.makeText(user_login.this, "Welcome Back!",
-                                                Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(user_login.this, Dashboard.class));
                                         finish();
                                     }
