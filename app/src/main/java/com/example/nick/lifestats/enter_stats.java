@@ -87,6 +87,18 @@ public class enter_stats extends AppCompatActivity
         final EditText minutes_et = (EditText) findViewById(R.id.minute_et);
         //---------------------------------------------------------------------------
 
+        Button back = (Button) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(enter_stats.this, Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
+        final Button submit = (Button) findViewById(R.id.submit_test);
+        submit.setVisibility(View.INVISIBLE);
+
         //final int[] subcategoryBit = {0};
         ImageView financial_btn = (ImageView) findViewById(R.id.financial_button);
         financial_btn.setOnClickListener(new View.OnClickListener() {
@@ -97,12 +109,12 @@ public class enter_stats extends AppCompatActivity
                 data_types.setVisibility(View.VISIBLE);
                 input.setVisibility(View.VISIBLE);
                 tv.setVisibility(View.VISIBLE);
+                submit.setVisibility(View.VISIBLE);
                 minutes_tv.setVisibility(View.GONE);
                 minutes_et.setText("");
                 minutes_et.setVisibility(View.GONE);
                 symbol.setText("$");
 
-                Button submit = (Button) findViewById(R.id.submit_test);
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -117,14 +129,20 @@ public class enter_stats extends AppCompatActivity
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         String id = user.getUid();
 
-                        lifestats_db.child(id).child("Data").child("Financial").child(type).child(formattedDate).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
-                                toast.show();
-                            }
+                        if(data.equals("")){
+                            Toast toast = Toast.makeText(getApplicationContext(), "Some Fields Were Left Blank!", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }//end if
+                        else {
+                            lifestats_db.child(id).child("Data").child("Financial").child(type).child(formattedDate).setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
 
-                        });
+                            });
+                        }//end else
                     }
                 });
             }
@@ -138,6 +156,7 @@ public class enter_stats extends AppCompatActivity
                 data_types.setVisibility(View.VISIBLE);
                 input.setVisibility(View.VISIBLE);
                 tv.setVisibility(View.VISIBLE);
+                submit.setVisibility(View.VISIBLE);
                 symbol.setText("Hours:");
 
                 minutes_tv.setText("Minutes:");
@@ -146,7 +165,6 @@ public class enter_stats extends AppCompatActivity
 
                 input.requestFocus();//sets it as the first one to input into
 
-                Button submit = (Button) findViewById(R.id.submit_test);
                 submit.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         int zero = 0;
@@ -170,13 +188,19 @@ public class enter_stats extends AppCompatActivity
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         String id = user.getUid();
 
-                        lifestats_db.child(id).child("Data").child("Time").child(type).child(formattedDate).setValue(total_time).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
-                                toast.show();
-                            }
-                        });
+                        if(total_time.equals("")) {
+                            Toast toast = Toast.makeText(getApplicationContext(), "Some Fields Were Left Blank!", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }//end if
+                        else {
+                            lifestats_db.child(id).child("Data").child("Time").child(type).child(formattedDate).setValue(total_time).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
+                            });
+                        }//end else
                     }
                 });
             }

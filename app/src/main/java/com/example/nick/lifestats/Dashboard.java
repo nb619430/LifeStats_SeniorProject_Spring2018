@@ -90,7 +90,7 @@ public class Dashboard extends AppCompatActivity
                 String user_age = dataSnapshot.child("Age").getValue().toString();
 
                 TextView welcome = (TextView) findViewById(R.id.welcomeMessage);
-                String temp = welcome.getText().toString() + " " + first_name + " " + last_name + "!";
+                String temp = welcome.getText().toString() + " " + first_name + "!";
                 welcome.setText(temp);
             }
 

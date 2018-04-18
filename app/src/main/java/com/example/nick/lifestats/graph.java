@@ -77,7 +77,7 @@ public class graph extends AppCompatActivity {
 
                         //               GRAPH STUFF
                         //----------------------------------------------
-                        LineDataSet dataset = new LineDataSet(Y, "Test");
+                        LineDataSet dataset = new LineDataSet(Y, subcategory);
                         LineData graph_data = new LineData(X, dataset);
                         chart.setData(graph_data);
                         chart.setDescription("Financial Data");
@@ -100,6 +100,7 @@ public class graph extends AppCompatActivity {
                 }
             });//end reference listener for Finance
         }
+
         if(category.equals("Time")){
             chart = (LineChart) findViewById(R.id.test_chart);
             DatabaseReference ref = lifestats_db.child(id).child("Data").child("Time");
@@ -109,15 +110,40 @@ public class graph extends AppCompatActivity {
                     if (dataSnapshot.child(subcategory).exists()) {
                         String data = dataSnapshot.child(subcategory).getValue().toString();
                         String temp = "";
+
+                        ArrayList<String> X = new ArrayList<String>();
                         for (int i = 0; i < user_data(data).size(); i++) {
-                            temp = temp + user_data(data).get(i) + "\n";
+                            String index = String.valueOf(i);
+                            X.add(index);
                         }
+
+                        ArrayList<Entry> Y = new ArrayList<Entry>();
+                        for (int i = 0; i < user_data(data).size(); i++) {
+                            //String index = String.valueOf(i);
+                            float value = Float.parseFloat(user_data(data).get(user_data(data).size()-(i+1)));
+                            //X.add(index);
+                            Y.add(new Entry(value, i));
+                        }
+
+                        //               GRAPH STUFF
+                        //----------------------------------------------
+                        LineDataSet dataset = new LineDataSet(Y, subcategory);
+                        LineData graph_data = new LineData(X, dataset);
+                        chart.setData(graph_data);
+                        chart.setDescription("Time Data");
+                        //----------------------------------------------
+
                     } else {
-                        TextView output = (TextView) findViewById(R.id.output_tv);
-                        output.setText("No data Found!");
+                        ArrayList<String> X = new ArrayList<String>();
+                        ArrayList<Entry> Y = new ArrayList<Entry>();
+                        X.add("X");
+                        Y.add(new Entry(0f, 0));
+                        LineDataSet dataset = new LineDataSet(Y, "No Data Found");
+                        LineData graph_data = new LineData(X, dataset);
+                        chart.setData(graph_data);
+                        chart.setDescription("NO DATA FOUND");
                     }
                 }
-
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                 }
@@ -172,4 +198,21 @@ public class graph extends AppCompatActivity {
         }
         return values;
     }//end user_data
+
+    private Integer hours(List<String>values){
+        StringBuilder sb = new StringBuilder();
+        Integer hours = 0;
+        Integer minutes = 0;
+        //gets the total of all the values in the database
+        for (String s : values) {
+            hours = hours + Integer.parseInt(s.substring(0,2));
+            minutes = minutes + Integer.parseInt(s.substring(2,4));
+            if(minutes >= 60){ //rounds minutes up to hours
+                int temp = minutes/60;
+                minutes = minutes%60;
+                hours = hours + temp;
+            }//end if
+        }
+        return hours;
+    }//end output
 }
