@@ -255,74 +255,60 @@ public class view_stats extends AppCompatActivity
 
     private Integer hours_total(List<String>values){
         StringBuilder sb = new StringBuilder();
-        Integer hours = 0;
-        Integer minutes = 0;
+        Integer total_minutes = 0;
         //gets the total of all the values in the database
         for (String s : values) {
-            hours = hours + Integer.parseInt(s.substring(0,2));
-            minutes = minutes + Integer.parseInt(s.substring(2,4));
-            if(minutes >= 60){ //rounds minutes up to hours
-                int temp = minutes/60;
-                minutes = minutes%60;
-                hours = hours + temp;
-            }//end if
+            total_minutes = total_minutes + Integer.parseInt(s);
         }
-        return hours;
-    }//end output
+        Integer hours = total_minutes / 60;
+        Integer minutes = total_minutes % 60;
 
+        return hours;
+    }
 
     private Integer minutes_total(List<String>values){
         StringBuilder sb = new StringBuilder();
-        Integer minutes = 0;
+        Integer total_minutes = 0;
         //gets the total of all the values in the database
         for (String s : values) {
-            minutes = minutes + Integer.parseInt(s.substring(2,4));
-            if(minutes >= 60){ //rounds minutes up to hours
-                minutes = minutes%60;
-            }//end if
+            total_minutes = total_minutes + Integer.parseInt(s);
         }
-        return minutes;
-    }//end output
+        Integer hours = total_minutes / 60;
+        Integer minutes = total_minutes % 60;
 
+        return minutes;
+    }
 
     private Integer time_average_hours(List<String>values){
         StringBuilder sb = new StringBuilder();
-        Integer hours = 0;
-        Integer minutes = 0;
+        Integer total_minutes = 0;
         int count = 0;
         //gets the total of all the values in the database
         for (String s : values) {
+            total_minutes = total_minutes + Integer.parseInt(s);
             count++;
-            hours = hours + Integer.parseInt(s.substring(0,2));
-            minutes = minutes + Integer.parseInt(s.substring(2,4));
         }
-        minutes = minutes + (hours*60);
-        int avg_minutes = minutes/count;
-        if(avg_minutes >= 60){
-            hours = avg_minutes/60;
-        }
+        Integer avg_minutes_total = total_minutes/count;
+        Integer avg_hours = avg_minutes_total / 60;
+        Integer avg_minutes = avg_minutes_total % 60;
 
-        return hours;
+        return avg_hours;
     }//end output
 
     private Integer time_average_minutes(List<String>values){
         StringBuilder sb = new StringBuilder();
-        Integer hours = 0;
-        Integer minutes = 0;
+        Integer total_minutes = 0;
         int count = 0;
         //gets the total of all the values in the database
         for (String s : values) {
+            total_minutes = total_minutes + Integer.parseInt(s);
             count++;
-            hours = hours + Integer.parseInt(s.substring(0,2));
-            minutes = minutes + Integer.parseInt(s.substring(2,4));
         }
-        minutes = minutes + (hours*60);
-        int avg_minutes = minutes/count;
-        if(avg_minutes >= 60){
-            minutes = avg_minutes%60;
-        }
+        Integer avg_minutes_total = total_minutes/count;
+        Integer avg_hours = avg_minutes_total / 60;
+        Integer avg_minutes = avg_minutes_total % 60;
 
-        return minutes;
+        return avg_minutes;
     }//end output
 
     private Integer financial_total(List<String>values){

@@ -171,11 +171,17 @@ public class enter_stats extends AppCompatActivity
 
                         //Stores hours and minutes in a 4-digit number - first 2 = hours, next 2 = minutes
                         String minutes = minutes_et.getText().toString();
-                        if(minutes.length() == 1){minutes = zero + minutes;}
-                        if(minutes.length() == 0){minutes = "00";}
+                        //if(minutes.length() == 1){minutes = zero + minutes;}
+                        //if(minutes.length() == 0){minutes = "00";}
                         String hours = input.getText().toString();
-                        if(hours.length() == 1){hours = zero + hours;}
-                        if(hours.length() == 0){hours = "00";}
+                        //if(hours.length() == 1){hours = zero + hours;}
+                        //if(hours.length() == 0){hours = "00";}
+
+                        int hour = Integer.parseInt(hours);
+                        int min = Integer.parseInt(minutes);
+
+                        int total_in_minutes = (hour * 60) + min;
+                        String total = String.valueOf(total_in_minutes);
 
                         String type = data_types.getSelectedItem().toString();
                         String total_time = hours + minutes;
@@ -193,7 +199,7 @@ public class enter_stats extends AppCompatActivity
                             toast.show();
                         }//end if
                         else {
-                            lifestats_db.child(id).child("Data").child("Time").child(type).child(formattedDate).setValue(total_time).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            lifestats_db.child(id).child("Data").child("Time").child(type).child(formattedDate).setValue(total).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast toast = Toast.makeText(getApplicationContext(), "Data Successfully Entered", Toast.LENGTH_SHORT);
