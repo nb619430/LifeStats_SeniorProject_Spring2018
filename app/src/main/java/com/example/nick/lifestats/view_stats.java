@@ -35,6 +35,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -132,7 +133,17 @@ public class view_stats extends AppCompatActivity
                                     } else {
                                         String average = financial_average(user_data_financial(data)).toString();
                                         String total = financial_total(user_data_financial(data)).toString();
-                                        String statistics = "Total Spent: $" + total + ".00\n" + "Average Spent: $" + average + ".00\n";
+
+                                        String max_total = max(user_data_financial(data)).toString();
+
+                                        DecimalFormat df2 = new DecimalFormat(".##");
+                                        Double variance = variance(user_data_financial(data), financial_average(user_data_financial(data)));
+                                        Double stdev = Math.sqrt(variance);
+
+                                        String statistics = "Total Spent: $" + total + ".00\n" +
+                                                "Average Spent: $" + average + ".00\n" +
+                                                "Largest Entry: $" + max_total + ".00\n" +
+                                                "Standard Deviation: $" + df2.format(stdev);
                                         output.setText(statistics);
                                     }
                                 }
@@ -189,8 +200,19 @@ public class view_stats extends AppCompatActivity
                                         String total_minutes = minutes_total(user_data_time(data)).toString();
                                         String average_hours = time_average_hours(user_data_time(data)).toString();
                                         String average_minutes = time_average_minutes(user_data_time(data)).toString();
+
+                                        String max_total = max(user_data_time(data)).toString();
+                                        int max_hours = Integer.parseInt(max_total) / 60;
+                                        int max_mins = Integer.parseInt(max_total) % 60;
+
+                                        DecimalFormat df2 = new DecimalFormat(".##");
+                                        Double variance = variance(user_data_time(data), time_average_total_minutes(user_data_time(data)));
+                                        Double stdev = Math.sqrt(variance);
+
                                         output.setText("Total Time: " + total_hours + " Hours, and " + total_minutes + " Minutes" + "\n" +
-                                                "Average Time: " + average_hours + " Hours, and " + average_minutes + " Minutes");
+                                                "Average Time: " + average_hours + " Hours, and " + average_minutes + " Minutes" + "\n" +
+                                                "Largest Entry: " + max_hours + " Hours, and " + max_mins + " Minutes" + "\n" +
+                                                "Standard Deviation: " + df2.format(stdev) + " Minutes");
                                     }
                                 }
                                 else{
@@ -209,6 +231,29 @@ public class view_stats extends AppCompatActivity
             }
         });
 
+    }
+
+    private Double variance(List<String>values, int average){
+        double avg = average;
+        double temp = 0;
+        int count = 0;
+        for(String s : values) {
+            count++;
+            temp = temp + (Integer.parseInt(s) - avg) * (Integer.parseInt(s) - avg);
+        }
+        return (temp / (count - 1));
+    }
+
+    private Integer max(List<String>values){
+        StringBuilder sb = new StringBuilder();
+        Integer max = 0;
+        //gets the total of all the values in the database
+        for (String s : values) {
+            if((Integer.parseInt(s)) > max){
+                max = Integer.parseInt(s);
+            }
+        }
+        return max;
     }
 
     private List<String> user_data_time(String output) {
@@ -309,6 +354,20 @@ public class view_stats extends AppCompatActivity
         Integer avg_minutes = avg_minutes_total % 60;
 
         return avg_minutes;
+    }//end output
+
+    private Integer time_average_total_minutes(List<String>values){
+        StringBuilder sb = new StringBuilder();
+        Integer total_minutes = 0;
+        int count = 0;
+        //gets the total of all the values in the database
+        for (String s : values) {
+            total_minutes = total_minutes + Integer.parseInt(s);
+            count++;
+        }
+        Integer avg_minutes_total = total_minutes/count;
+
+        return avg_minutes_total;
     }//end output
 
     private Integer financial_total(List<String>values){

@@ -171,11 +171,9 @@ public class enter_stats extends AppCompatActivity
 
                         //Stores hours and minutes in a 4-digit number - first 2 = hours, next 2 = minutes
                         String minutes = minutes_et.getText().toString();
-                        //if(minutes.length() == 1){minutes = zero + minutes;}
-                        //if(minutes.length() == 0){minutes = "00";}
+                            if(minutes.length() == 0){minutes = "0";}
                         String hours = input.getText().toString();
-                        //if(hours.length() == 1){hours = zero + hours;}
-                        //if(hours.length() == 0){hours = "00";}
+                            if(hours.length() == 0){hours = "0";}
 
                         int hour = Integer.parseInt(hours);
                         int min = Integer.parseInt(minutes);
@@ -194,7 +192,7 @@ public class enter_stats extends AppCompatActivity
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         String id = user.getUid();
 
-                        if(total_time.equals("")) {
+                        if(total.equals("0")) {
                             Toast toast = Toast.makeText(getApplicationContext(), "Some Fields Were Left Blank!", Toast.LENGTH_SHORT);
                             toast.show();
                         }//end if

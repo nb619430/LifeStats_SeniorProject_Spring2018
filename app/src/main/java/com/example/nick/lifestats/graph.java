@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -21,9 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class graph extends AppCompatActivity {
@@ -50,36 +46,45 @@ public class graph extends AppCompatActivity {
 
         final String category = getIntent().getExtras().getString("category","default");
         final String subcategory = getIntent().getExtras().getString("subcategory","default");
+        TextView x_label = (TextView) findViewById(R.id.xlabel);
 
         if(category.equals("Financial")) {
-            chart = (LineChart) findViewById(R.id.test_chart);
+            final LineChart chart = (LineChart) findViewById(R.id.test_chart);
             DatabaseReference ref = lifestats_db.child(id).child("Data").child("Financial");
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.child(subcategory).exists()) {
                         String data = dataSnapshot.child(subcategory).getValue().toString();
-                        String temp = "";
+
+                        List<String>temp = user_data(data);
+                        String tests[] = new String[temp.size()];
+                        temp.toArray(tests);
 
                         ArrayList<String> X = new ArrayList<String>();
-                        for (int i = 0; i < user_data(data).size(); i++) {
-                            String index = String.valueOf(i);
+                        int count_x = 0;
+                        for(String s : tests) {
+                            String index = String.valueOf(count_x);
                             X.add(index);
+                            count_x++;
                         }
 
                         ArrayList<Entry> Y = new ArrayList<Entry>();
-                        for (int i = 0; i < user_data(data).size(); i++) {
-                            //String index = String.valueOf(i);
-                            float value = Float.parseFloat(user_data(data).get(user_data(data).size()-(i+1)));
-                            //X.add(index);
-                            Y.add(new Entry(value, i));
+                        int count_y = 0;
+                        for(String s : tests) {
+                            float test = Float.parseFloat(s);
+                            Y.add(new Entry(test, count_y));
+                            count_y++;
                         }
 
                         //               GRAPH STUFF
                         //----------------------------------------------
+                        TextView y_label = (TextView) findViewById(R.id.ylabel);
+                        y_label.setText("Dollars ($)");
                         LineDataSet dataset = new LineDataSet(Y, subcategory);
                         LineData graph_data = new LineData(X, dataset);
                         chart.setData(graph_data);
+                        chart.invalidate();
                         chart.setDescription("Financial Data");
                         //----------------------------------------------
 
@@ -109,7 +114,6 @@ public class graph extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.child(subcategory).exists()) {
                         String data = dataSnapshot.child(subcategory).getValue().toString();
-                        String temp = "";
 
                         ArrayList<String> X = new ArrayList<String>();
                         for (int i = 0; i < user_data(data).size(); i++) {
@@ -119,14 +123,16 @@ public class graph extends AppCompatActivity {
 
                         ArrayList<Entry> Y = new ArrayList<Entry>();
                         for (int i = 0; i < user_data(data).size(); i++) {
-                            //String index = String.valueOf(i);
                             float value = Float.parseFloat(user_data(data).get(user_data(data).size()-(i+1)));
-                            //X.add(index);
                             Y.add(new Entry(value, i));
+                            chart.notifyDataSetChanged();
+                            chart.invalidate();
                         }
 
                         //               GRAPH STUFF
                         //----------------------------------------------
+                        TextView y_label = (TextView) findViewById(R.id.ylabel);
+                        y_label.setText("Time (Minutes)");
                         LineDataSet dataset = new LineDataSet(Y, subcategory);
                         LineData graph_data = new LineData(X, dataset);
                         chart.setData(graph_data);
@@ -149,32 +155,6 @@ public class graph extends AppCompatActivity {
                 }
             });//end reference listener for Time
         }
-
-        /*
-        chart = (LineChart) findViewById(R.id.test_chart);
-        ArrayList<String> labels = new ArrayList<String>();
-        ArrayList<Entry> Y = new ArrayList<Entry>();
-
-        labels.add("1");
-        labels.add("2");
-        labels.add("3");
-        labels.add("4");
-        labels.add("5");
-        labels.add("6");
-        Y.add(new Entry(12f, 0));
-        Y.add(new Entry(15f, 1));
-        Y.add(new Entry(1f, 2));
-        Y.add(new Entry(42f, 3));
-        Y.add(new Entry(20f, 4));
-        Y.add(new Entry(12f, 5));
-
-        //GENERATE ALL FINANCIAL DATA IN ONE GRAPH!!!!!!! FOR ALL MONEY CATEGORIES!!!!
-
-        LineDataSet dataset = new LineDataSet(Y, "Test");
-        LineData data = new LineData(labels, dataset);
-        chart.setData(data);
-
-        chart.setDescription("Test Chart For LifeStats");*/
     }
 
     //This parses the JSON generated by the database reference call into an arraylist of entries
@@ -199,20 +179,4 @@ public class graph extends AppCompatActivity {
         return values;
     }//end user_data
 
-    private Integer hours(List<String>values){
-        StringBuilder sb = new StringBuilder();
-        Integer hours = 0;
-        Integer minutes = 0;
-        //gets the total of all the values in the database
-        for (String s : values) {
-            hours = hours + Integer.parseInt(s.substring(0,2));
-            minutes = minutes + Integer.parseInt(s.substring(2,4));
-            if(minutes >= 60){ //rounds minutes up to hours
-                int temp = minutes/60;
-                minutes = minutes%60;
-                hours = hours + temp;
-            }//end if
-        }
-        return hours;
-    }//end output
 }
