@@ -21,7 +21,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="decd69ce-da9b-425b-ae65-21473ea3d337" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java" />
     </list>
@@ -145,8 +144,8 @@
       <file leaf-file-name="view_stats.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-867">
-              <caret line="440" column="32" lean-forward="false" selection-start-line="440" selection-start-column="32" selection-end-line="440" selection-end-column="32" />
+            <state relative-caret-position="1394">
+              <caret line="241" column="21" lean-forward="false" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -2327,7 +2326,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525198190766" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525198404182" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2375,7 +2374,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525198190766" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525198404182" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2537,7 +2536,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525198190768" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525198404184" />
       </method>
     </configuration>
     <list size="1">
@@ -2682,7 +2681,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525197858144</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="JavaDocs V2">
+      <created>1525198221843</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1525198221843</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2804,7 +2810,8 @@
     <MESSAGE value="Time DB Storage changed for graphs" />
     <MESSAGE value="Additional Stats + Code Cleanup" />
     <MESSAGE value="JavaDocs, Comments, Code Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaDocs, Comments, Code Cleanup" />
+    <MESSAGE value="JavaDocs V2" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDocs V2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3246,8 +3253,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nick/lifestats/view_stats.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
-          <caret line="440" column="32" lean-forward="false" selection-start-line="440" selection-start-column="32" selection-end-line="440" selection-end-column="32" />
+        <state relative-caret-position="1394">
+          <caret line="241" column="21" lean-forward="false" selection-start-line="241" selection-start-column="21" selection-end-line="241" selection-end-column="21" />
           <folding />
         </state>
       </provider>

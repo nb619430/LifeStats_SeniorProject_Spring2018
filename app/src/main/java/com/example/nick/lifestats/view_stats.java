@@ -239,7 +239,7 @@ public class view_stats extends AppCompatActivity
      * Takes all of the user-entered values and calculates the variances
      * @param values String List
      * @param average int
-     * @return
+     * @return Double
      */
     private Double variance(List<String>values, int average){
         double avg = average;
@@ -255,7 +255,7 @@ public class view_stats extends AppCompatActivity
     /**
      * Calculates the largest single entry in the database
      * @param values String List
-     * @return
+     * @return Integer
      */
     private Integer max(List<String>values){
         StringBuilder sb = new StringBuilder();
@@ -272,7 +272,7 @@ public class view_stats extends AppCompatActivity
     /**
      * Parsed through the JSON for Time data and returns a string with all entries in one list
      * @param output String
-     * @return
+     * @return String List
      */
     private List<String> user_data_time(String output) {
         List<String> time = new ArrayList<String>();
@@ -298,7 +298,7 @@ public class view_stats extends AppCompatActivity
     /**
      * Parsed through the JSON for Financial data and returns a string with all entries in one list
      * @param output String
-     * @return
+     * @return String List
      */
     private List<String> user_data_financial(String output) {
         List<String> values = new ArrayList<String>();
@@ -324,7 +324,7 @@ public class view_stats extends AppCompatActivity
     /**
      * Calculates the total number of hours for Financial Data
      * @param values String List
-     * @return
+     * @return Integer
      */
     private Integer hours_total(List<String>values){
         StringBuilder sb = new StringBuilder();
@@ -342,7 +342,7 @@ public class view_stats extends AppCompatActivity
     /**
      * Calculates the total number of minutes for Financial Data
      * @param values String List
-     * @return
+     * @return Integer
      */
     private Integer minutes_total(List<String>values){
         StringBuilder sb = new StringBuilder();
@@ -360,7 +360,7 @@ public class view_stats extends AppCompatActivity
     /**
      * Calculates the average hours from users' time data
      * @param values String List
-     * @return
+     * @return Integer
      */
     private Integer time_average_hours(List<String>values){
         StringBuilder sb = new StringBuilder();
@@ -381,7 +381,7 @@ public class view_stats extends AppCompatActivity
     /**
      * Calculates the average minutes from users' time data
      * @param values String List
-     * @return
+     * @return Integer
      */
     private Integer time_average_minutes(List<String>values){
         StringBuilder sb = new StringBuilder();
@@ -402,7 +402,7 @@ public class view_stats extends AppCompatActivity
     /**
      * calculates the total time in MINUTES
      * @param values String List
-     * @return
+     * @return Integer
      */
     private Integer time_average_total_minutes(List<String>values){
         StringBuilder sb = new StringBuilder();
@@ -421,7 +421,7 @@ public class view_stats extends AppCompatActivity
     /**
      * Calculates the sum of all financial data
      * @param values String List
-     * @return
+     * @return Integer
      */
     private Integer financial_total(List<String>values){
         StringBuilder sb = new StringBuilder();
@@ -439,7 +439,7 @@ public class view_stats extends AppCompatActivity
     /**
      * calculates the average financial input
      * @param values String List
-     * @return
+     * @return Integer
      */
     private Integer financial_average(List<String>values){
         StringBuilder sb = new StringBuilder();
