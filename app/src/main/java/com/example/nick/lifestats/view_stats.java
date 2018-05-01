@@ -237,8 +237,8 @@ public class view_stats extends AppCompatActivity
 
     /**
      * Takes all of the user-entered values and calculates the variances
-     * @param values
-     * @param average
+     * @param values String List
+     * @param average int
      * @return
      */
     private Double variance(List<String>values, int average){
@@ -254,7 +254,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * Calculates the largest single entry in the database
-     * @param values
+     * @param values String List
      * @return
      */
     private Integer max(List<String>values){
@@ -271,7 +271,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * Parsed through the JSON for Time data and returns a string with all entries in one list
-     * @param output
+     * @param output String
      * @return
      */
     private List<String> user_data_time(String output) {
@@ -297,7 +297,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * Parsed through the JSON for Financial data and returns a string with all entries in one list
-     * @param output
+     * @param output String
      * @return
      */
     private List<String> user_data_financial(String output) {
@@ -323,7 +323,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * Calculates the total number of hours for Financial Data
-     * @param values
+     * @param values String List
      * @return
      */
     private Integer hours_total(List<String>values){
@@ -341,7 +341,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * Calculates the total number of minutes for Financial Data
-     * @param values
+     * @param values String List
      * @return
      */
     private Integer minutes_total(List<String>values){
@@ -359,7 +359,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * Calculates the average hours from users' time data
-     * @param values
+     * @param values String List
      * @return
      */
     private Integer time_average_hours(List<String>values){
@@ -380,7 +380,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * Calculates the average minutes from users' time data
-     * @param values
+     * @param values String List
      * @return
      */
     private Integer time_average_minutes(List<String>values){
@@ -401,7 +401,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * calculates the total time in MINUTES
-     * @param values
+     * @param values String List
      * @return
      */
     private Integer time_average_total_minutes(List<String>values){
@@ -420,7 +420,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * Calculates the sum of all financial data
-     * @param values
+     * @param values String List
      * @return
      */
     private Integer financial_total(List<String>values){
@@ -438,7 +438,7 @@ public class view_stats extends AppCompatActivity
 
     /**
      * calculates the average financial input
-     * @param values
+     * @param values String List
      * @return
      */
     private Integer financial_average(List<String>values){
