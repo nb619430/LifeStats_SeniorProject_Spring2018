@@ -7,7 +7,10 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.TextView;
 
-//TAKEN FROM "https://stackoverflow.com/a/7855852" TO MAKE A VERTICAL TEXTVIEW TO ATTACH TO MY GRAPHS
+/**
+ * (Taken from "https://stackoverflow.com/a/7855852" to make a vertical 'TextView' that extend the native Android Studio 'TextView')
+ */
+
 
 public class VerticalTextView extends android.support.v7.widget.AppCompatTextView {
     final boolean topDown;

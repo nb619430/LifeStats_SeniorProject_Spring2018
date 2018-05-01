@@ -26,6 +26,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/**
+ * Primary location where the user can choose which function they want to perform
+ */
 public class Dashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,6 +37,10 @@ public class Dashboard extends AppCompatActivity
     private FirebaseAuth auth;
 
     @Override
+    /**
+     * This initiates the page itself
+     * @param savedInstanceState
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
@@ -91,6 +98,10 @@ public class Dashboard extends AppCompatActivity
 
         DatabaseReference ref = lifestats_db.child(id).child("Profile");
         ref.addValueEventListener(new ValueEventListener() {
+            /**
+             * Instance of the current data in the database that returns the JSON chunk
+             * @param dataSnapshot
+             */
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String first_name = dataSnapshot.child("First Name").getValue().toString();
@@ -143,6 +154,9 @@ public class Dashboard extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
+    /**
+     * This is the interactive menu that redirects the user to the selected page
+     */
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();

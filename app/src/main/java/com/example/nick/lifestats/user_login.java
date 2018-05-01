@@ -17,11 +17,19 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**
+ * Users can enter their registered email and password combination to access their "LifeStats" (data/profile)
+ */
+
 public class user_login extends AppCompatActivity {
 
     private FirebaseAuth database;
 
     @Override
+    /**
+     * This initiates the page itself
+     * @param savedInstanceState
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
@@ -50,16 +58,19 @@ public class user_login extends AppCompatActivity {
                 String email = email_et.getText().toString().trim();
                 String password = password_et.getText().toString().trim();
 
+                //Makes sure the Email input isnt empty
                 if(email.equals("")){
                     Toast.makeText(user_login.this, "No Email Entered",
                             Toast.LENGTH_SHORT).show();
                 }
 
+                //Makes sure there are no empty inputs
                 else if(password.equals("")){
                     Toast.makeText(user_login.this, "No Password Entered",
                             Toast.LENGTH_SHORT).show();
                 }
 
+                //Makes sure there are not empty inputs
                 else if(email.equals("") && password.equals("")){
                     Toast.makeText(user_login.this, "No Email or Password Entered",
                             Toast.LENGTH_SHORT).show();
@@ -68,7 +79,7 @@ public class user_login extends AppCompatActivity {
                 else {
                     login.setVisibility(View.INVISIBLE); //replaces login with progress circle
                     loading.setVisibility(View.VISIBLE);
-                    database.signInWithEmailAndPassword(email, password)
+                    database.signInWithEmailAndPassword(email, password) //Authentication with Firebase
                             .addOnCompleteListener(user_login.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {

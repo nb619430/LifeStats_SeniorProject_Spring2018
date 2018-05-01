@@ -19,6 +19,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * New users can create/register a unique account to access/log their "LifeStats" (data/profile)
+ */
+
 public class user_registration extends AppCompatActivity {
 
     private FirebaseAuth auth;
@@ -26,12 +30,17 @@ public class user_registration extends AppCompatActivity {
     DatabaseReference lifestats_db = database.getReference("user");
 
     @Override
+    /**
+     * This initiates the page itself
+     * @param savedInstanceState
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registration);
 
         auth = FirebaseAuth.getInstance();
 
+        //Submit button that pulls from each input box
         Button submit = (Button)findViewById(R.id.reg_btn);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,16 +59,19 @@ public class user_registration extends AppCompatActivity {
                 final String lname = last_name.getText().toString();
                 final String age = age_et.getText().toString();
 
+                //Blank Field check
                 if((email.equals(""))||(password.equals(""))||(confirm.equals(""))||(fname.equals(""))||(lname.equals(""))||(age.equals(""))){
                     Toast.makeText(user_registration.this, "One Or More Field Is Blank",
                             Toast.LENGTH_SHORT).show();
                 }
 
+                //Password must be at least 6 characters long
                 else if(password.length()<6){
                     Toast.makeText(user_registration.this, "Password Must Be At Least 6 Characters Long",
                             Toast.LENGTH_SHORT).show();
                 }
 
+                //makes sure the password matches previous one
                 else if(password.equals(confirm)){
                     auth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(user_registration.this, new OnCompleteListener<AuthResult>() {

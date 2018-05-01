@@ -14,10 +14,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+/**
+ * Users can change personal information associated with their profile
+ */
 public class edit_profile extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
+    /**
+     * This initiates the page itself
+     * @param savedInstanceState
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
@@ -77,6 +84,9 @@ public class edit_profile extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
+    /**
+     * Menu navigation options
+     */
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();

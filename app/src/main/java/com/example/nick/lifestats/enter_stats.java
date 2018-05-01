@@ -34,14 +34,22 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+/**
+ * Core function of the application; User data is entered here to be processed and graphically represented
+ */
+
 public class enter_stats extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    // Test Message to DB
+    //Connects to firebase root node
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference lifestats_db = database.getReference("user");
 
     @Override
+    /**
+     * This initiates the page itself
+     * @param savedInstanceState
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_stats);
@@ -75,18 +83,19 @@ public class enter_stats extends AppCompatActivity
         final EditText input = (EditText) findViewById(R.id.data_et);//field where values will be entered from
         input.setVisibility(View.GONE);
 
-        final TextView tv = (TextView) findViewById(R.id.tv);
+        final TextView tv = (TextView) findViewById(R.id.tv);//values will be printed
         tv.setVisibility(View.GONE);
 
-        final TextView symbol = (TextView) findViewById(R.id.input_symbol_tv);
+        final TextView symbol = (TextView) findViewById(R.id.input_symbol_tv);//$ or Time
         symbol.setText("");
 
-        final TextView minutes_tv = (TextView) findViewById(R.id.minutes_tv);
+        final TextView minutes_tv = (TextView) findViewById(R.id.minutes_tv);//Textview for Minutes
         minutes_tv.setVisibility(View.GONE);
 
-        final EditText minutes_et = (EditText) findViewById(R.id.minute_et);
+        final EditText minutes_et = (EditText) findViewById(R.id.minute_et);//Textview for Hours
         //---------------------------------------------------------------------------
 
+        //Goes back to dashboard
         Button back = (Button) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,10 +105,10 @@ public class enter_stats extends AppCompatActivity
             }
         });
 
-        final Button submit = (Button) findViewById(R.id.submit_test);
+        final Button submit = (Button) findViewById(R.id.submit_test); //submit button for inputs to db
         submit.setVisibility(View.INVISIBLE);
 
-        //final int[] subcategoryBit = {0};
+        //Button to enable financial options
         ImageView financial_btn = (ImageView) findViewById(R.id.financial_button);
         financial_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,6 +157,7 @@ public class enter_stats extends AppCompatActivity
             }
         });
 
+        //button to enable Time data entry
         ImageView time_button = (ImageView) findViewById(R.id.time_button);
         time_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -245,6 +255,9 @@ public class enter_stats extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
+    /**
+     * Handles Menu items
+     */
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();

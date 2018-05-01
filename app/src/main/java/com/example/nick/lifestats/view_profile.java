@@ -27,6 +27,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/**
+ * Users can view the personal information associated with their account
+ */
+
 public class view_profile extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,6 +38,10 @@ public class view_profile extends AppCompatActivity
     DatabaseReference lifestats_db = database.getReference("user");
     private FirebaseAuth auth;
 
+    /**
+     * This initiates the page itself
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +74,7 @@ public class view_profile extends AppCompatActivity
         final TextView last_tv = (TextView) findViewById(R.id.lastname_tv);
         final TextView age_tv = (TextView) findViewById(R.id.age_tv);
 
+        //Pulls directly from the users "Profile" node in the database
         DatabaseReference ref = lifestats_db.child(id).child("Profile");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
